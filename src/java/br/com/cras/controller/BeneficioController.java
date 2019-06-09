@@ -118,9 +118,13 @@ public class BeneficioController {
     
     @RequestMapping(value="/editarBeneficio",method = RequestMethod.POST)  
     public String editarBeneficio(@ModelAttribute("beneficio") Beneficio emp, ModelMap model) throws Exception{  
-        BeneficioDAO dao = new BeneficioDAO();
+        
+            System.out.println("teste1");
+            BeneficioDAO dao = new BeneficioDAO();
+        
         try {
         
+            System.out.println("teste2");
             System.out.println("id is"+emp.getId());
             dao.update(emp); 
             String retorno = "Benefício atualizado";
@@ -128,6 +132,8 @@ public class BeneficioController {
             String retorno2 = "renderizarBuscarBeneficio";
             model.addAttribute("retorno2", retorno2);
          } catch (Error e) {
+             
+            System.out.println("teste3");
             System.out.println(e);
         } 
         return "mensagem";  

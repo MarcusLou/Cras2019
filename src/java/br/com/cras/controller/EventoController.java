@@ -71,6 +71,7 @@ public class EventoController {
         return "exibirevento";
     }
 
+    
 
 //--------------------------------------Cadastrar Evento---------------------------------------------------------------------
     
@@ -81,9 +82,11 @@ public class EventoController {
         try {
 
             dao.adicionar(evento);
-            String retorno = "Cadastrado realizado";
+            String retorno = "Cadastro realizado";
             model.addAttribute("retorno", retorno);
-            // model.addAttribute("retorno", evento.getNomeCoordenador());
+            String retorno2 = "renderizarBuscarEvento";
+            model.addAttribute("retorno2", retorno2);
+            
         } catch (SQLException e) {
             System.out.println(e);
 
@@ -113,45 +116,52 @@ public class EventoController {
 //-------------------------------------Editar Evento---------------------------------------------------------------------
     
     @RequestMapping(value="/editarEvento",method = RequestMethod.POST)  
-    public String editarEvento(@ModelAttribute("evento") Evento emp) throws Exception{  
+    public String editarEvento(@ModelAttribute("evento") Evento emp, ModelMap model) throws Exception{  
         EventoDAO dao = new EventoDAO();
-        /*
-        try{
-        String retorno ="Edição realizada"; 
-        Model model = null;
-        model.addAttribute("retorno", retorno);
-        }
-        catch (Error e){
-            System.out.println("Erro: arquivo não editado");
-        }
-        */
-        System.out.println("id is"+emp.getId());
-        dao.update(emp);  
-        return "mensagemAtualizado";  
+        try {
+        
+            System.out.println("id is"+emp.getId());
+            dao.update(emp); 
+            String retorno = "Evento atualizado";
+            model.addAttribute("retorno", retorno);
+            String retorno2 = "renderizarBuscarEvento";
+            model.addAttribute("retorno2", retorno2);
+         } catch (Error e) {
+            System.out.println(e);
+        } 
+        return "mensagem";  
     }   
+   
     
     //-------------------------------------Remover Evento---------------------------------------------------------------------
    
      
 
-    @RequestMapping(value="/removerEvento/{id}")  
-    public String removerEvento(@PathVariable int id, ModelMap model) throws SQLException, Exception  {  
+    @RequestMapping(value="/removerEvento/{id}", method=RequestMethod.GET)  
+    public String removerEvento(@PathVariable int id, Model model) throws SQLException, Exception  {  
         EventoDAO dao = new EventoDAO();
         
         try {
             Evento evento = dao.getEventoById(id); 
             evento.setStatus(false);
             dao.update(evento);
-             
+            String retorno = "Evento Removido";
+            model.addAttribute("retorno", retorno);
+            String retorno2 = "http://localhost:8080/Cras/renderizarBuscarEvento";
+            model.addAttribute("retorno2", retorno2);
         } catch (Error e) {
             System.out.println(e);
         }     
         
-        String retorno ="Evento removido";
-        model.addAttribute("retorno", retorno);
         return "mensagem";
     } 
     
 //    ---------------------------------------------------------------------------------------------------------------------
     
+    
+
+
+  
+
+
 }

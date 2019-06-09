@@ -62,6 +62,15 @@ public class Evento implements Serializable {
         this.status=true;
     }
     
+    public Evento(EventoBuilder eventoBuilder){
+     this.id = eventoBuilder.id;
+     this.cod_cras=eventoBuilder.cod_cras;
+     this.descricao=eventoBuilder.descricao;
+     this.nomeEvento=eventoBuilder.nomeEvento;
+    }
+
+   
+    
     
     public int getId() {
         return id;
