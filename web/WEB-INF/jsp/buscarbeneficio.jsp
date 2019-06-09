@@ -4,14 +4,15 @@
     Author     : Marcus
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!-- mapear boot por tags -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <link rel="stylesheet" href="resources/css/principal.css"/>
         <script src="resources/js/jQuery.js"></script>
@@ -28,11 +29,11 @@
     <body>
         <div class="container" > 
                 <div class="col-md-6 cadastro">
-                    <h1> Buscar BenefÃ­cio</h1>
+                    <h1> Buscar Benefício</h1>
                     <form action="buscarBeneficio" method="POST">
                         <div class="form-group"> 
                             
-                            Nome do BenefÃ­cio
+                            Nome do Benefício
                             </br>
                             <table width="700">
                                 <tr> 
@@ -47,7 +48,7 @@
                         <div class="form-group"> 
 
                             
-                            <a class="btn btn-success" href="renderizarCadastrarBeneficio">Cadastrar BenefÃ­cio!</a>
+                            <a class="btn btn-success" href="renderizarCadastrarBeneficio">Cadastrar Benefício!</a>
                         </div>
                         
                         <div class="container">
@@ -55,10 +56,10 @@
                                 <thead>
                                     <tr>    
                                         <th>Nome</th>
-                                        <th>NÃºmero da Guia</th>
+                                        <th>Número da Guia</th>
                                         <th>Valor</th>
-                                        <th>Data InÃ­cio</th>
-                                        <th>Data RenovaÃ§Ã£o</th>
+                                        <th>Data Início</th>
+                                        <th>Data Renovação</th>
                                         <th>Justificativa</th>
                                         <th>Status</th>
                                     </tr>

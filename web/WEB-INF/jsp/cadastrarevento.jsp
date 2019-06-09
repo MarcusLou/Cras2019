@@ -4,12 +4,14 @@
     Author     : Ronnie
 --%>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!-- mapear boot por tags -->
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
@@ -48,7 +50,7 @@
                     
                     <div class="form-group"> 
 
-                        Data de In√≠cio
+                        Data de InÌcio
                         </br>
                         <input type="date" name="dataInicio" id="dataInicio" class="form-control" required="" >
 
@@ -56,7 +58,7 @@
                     
                      <div class="form-group"> 
 
-                        Data de T√©rmino 
+                        Data de TÈrmino 
                         </br>
                         <input type="date" name="dataTermino" id="dataTermino" class="form-control" required="" >
 
@@ -64,14 +66,14 @@
 
                     <div class="form-group"> 
 
-                        Hor√°rio
+                        Hor·rio
                         </br>
                         <input type="time" name="horario" id="horario" class="form-control"  placeholder="00:00" required="">
 
                     </div>
 
                      <div class="form-group"> 
-                        Dura√ß√£o
+                        DuraÁ„o
                         </br>
                         <input type="time" name="duracao" id="duracao" class="form-control"  placeholder="00:00">
 
@@ -79,7 +81,7 @@
 
                     <div class="form-group"> 
 
-                        Descri√ß√£o
+                        DescriÁ„o
                         </br>
                         <input type="text" name="descricao" id="descricao" class="form-control">
 

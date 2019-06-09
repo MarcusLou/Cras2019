@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <link href="<c:url value='../resources/css/bootstrap.css' />" rel="stylesheet"></link>
         <link href="<c:url value='../resources/css/principal.css' />" rel="stylesheet"></link>
 	<script src="<c:url value='../resources/js/jQuery.js' />"></script>
