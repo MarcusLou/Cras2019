@@ -1,0 +1,43 @@
+#site{
+ width:1000px;
+ height:700px;
+ margin-top:0;
+ margin-right:auto;
+ margin-bottom:0;
+ margin-left:auto;
+ }
+ 
+ #header{
+ width:1000px;
+ height:100px;
+ background-color:#3399ff;
+ }
+ #conteudo{
+ width:1000px;
+ height:500px;
+ background-color:#ffffff;
+ }
+ #footer{
+ width:1000px;
+ height:100px;
+ background-color:#3399ff;
+ }
+ #conteudo-left{
+ width:500px;
+ height:300px;
+ float:left;
+ background:#ffffff;
+ }
+#conteudo-right{
+ width:500px;
+ height:400px;
+ float:left;
+ background-color:#ffffff;
+ }
+
+ 
+ #teste1{
+     width: 100%;
+     height: 100%;
+     background-image: url(../imagens/teladebemvindo.png);
+ }
