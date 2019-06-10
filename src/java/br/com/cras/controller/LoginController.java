@@ -17,28 +17,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 
 public class LoginController {
+
     @RequestMapping("/renderizarLogin")
     public String renderizarLogin() {
 
         return "login";
     }
-    
-   @RequestMapping ("/teste")
-    public String renderizarRonnie(){
+
+    @RequestMapping("/teste")
+    public String renderizarRonnie() {
         return "ronnie";
     }
-    
-    
+
     @RequestMapping("/index")
     public String index(Model model) {
         return "index";
     }
-    
-    
+
     @RequestMapping("/boasvindas")
     public String boasvindas() {
-            
+
         return "boasvindas";
     }
-    
+
 }

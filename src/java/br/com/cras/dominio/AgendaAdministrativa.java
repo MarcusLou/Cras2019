@@ -5,6 +5,7 @@
  */
 package br.com.cras.dominio;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,9 +25,9 @@ import javax.persistence.Table;
 @Table(name = "tbl_AgendaAdministrativa")
 
 @NamedQueries(
-        @NamedQuery (name= "AgendaAdministrativa.ativos", query = "SELECT c FROM Evento c WHERE c.status=true")
+        @NamedQuery (name= "AgendaAdministrativa.ativos", query = "SELECT c FROM AgendaAdministrativa c WHERE c.status=true")
 )
-public class AgendaAdministrativa {
+public class AgendaAdministrativa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -51,7 +52,22 @@ public class AgendaAdministrativa {
     
     @Column(name = "descricao")
     private String descricao;
+    
+    @Column(name = "status")
+    private boolean status;
+    
+    public AgendaAdministrativa(){
+        this.status = true;
+    }
+    
+    public boolean isStatus() {
+        return status;
+    }
 
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
     public int getId() {
         return id;
     }
