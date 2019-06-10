@@ -3,7 +3,7 @@ html, body {
     padding: 0;
 }
 body{
-    color: #8FBC8F;
+    color:   #8FBC8F;
     background: #E5E5E5;
 }
 .perfil{
@@ -133,6 +133,14 @@ input[type=number]::-webkit-outer-spin-button,
     color:  #0480be;
     
 }
+.black{
+    color: #000;
+}
+
+.branco{
+    color: #FFF;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
 
 #fundo img {
     width: 100%; 
@@ -146,7 +154,29 @@ input[type=number]::-webkit-outer-spin-button,
     position: relative; /* criamos um contexto para posicionamento */
 }
 .alinhamentoLogin{
-  margin-top:30%;
-    border:1px solid #dedede;
-    background-color:  #dedede;
+  margin-top:20%;
+    border:1px solid #dedede7d;
+    background-color:  #dedede7d;
+    opacity: 1;
+     text-decoration-color:  #0480be;
+        
+}
+.corPlaceHolder::-webkit-input-placeholder {
+    color:  #ff2525;
+}
+
+.corPlaceHolder::-moz-placeholder {
+  color: #ff2525;
+}
+
+.corPlaceHolder:-ms-input-placeholder {
+  color: #ff2525;
+}
+
+.corPlaceHolder::-ms-input-placeholder {
+  color: #ff2525;
+}
+
+.corPlaceHolder::placeholder {
+  color: #ff2525;
 }

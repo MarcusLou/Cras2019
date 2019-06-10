@@ -3,14 +3,13 @@
     Created on : 05/06/2019, 17:46:19
     Author     : Marcus
 --%>
-<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="<c:url value='../resources/css/bootstrap.css' />" rel="stylesheet"></link>
         <link href="<c:url value='../resources/css/principal.css' />" rel="stylesheet"></link>
 	<script src="<c:url value='../resources/js/jQuery.js' />"></script>
@@ -89,6 +88,7 @@
                 </div>
                 <div class="form-actions floatRight">
                     <input type="submit"  value="Editar" class="btn btn-primary">
+                        <input type="button" value="Cancelar" class="btn btn-danger" onClick="history.go(-1)"> 
                 </div>
             </form:form>
 	</div>

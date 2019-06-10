@@ -4,13 +4,12 @@
     Author     : Ronnie
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!-- mapear boot por tags -->
 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
@@ -24,12 +23,12 @@
                     <tr>    
                         <th>Nome do Evento</th>
                         <th>Nome do Coordenador</th>
-                        <th>Endere√ßo</th>
-                        <th> Data de In√≠cio </th>
-                        <th> Data de T√©rmino </th>
-                        <th>Hor√°rio</th>
-                        <th>Dura√ß√£o</th>
-                        <th>Descri√ß√£o</th>
+                        <th>EndereÁo</th>
+                        <th> Data de InÌcio </th>
+                        <th> Data de TÈrmino </th>
+                        <th>Hor·rio</th>
+                        <th>DuraÁ„o</th>
+                        <th>DescriÁ„o</th>
                         <th>Status </th>
                     </tr>
                 </thead>

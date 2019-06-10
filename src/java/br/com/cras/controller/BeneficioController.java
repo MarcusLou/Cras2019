@@ -139,6 +139,7 @@ public class BeneficioController {
 
     @RequestMapping(value="/removerBeneficio/{id}", method = RequestMethod.GET)  
     public String removerBeneficio(@PathVariable int id, Model model) throws SQLException, Exception  {  
+        
         BeneficioDAO dao = new BeneficioDAO();
         
         try {

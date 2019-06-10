@@ -4,16 +4,15 @@
     Author     : Ronnie
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="resources/css/style.css"/>
-        <link rel="stylesheet" href="resources/css/principal.css"/>
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="resources/css/principal.css"/>
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script src="resources/js/bootstrap.js"></script>
         <title>Login</title>
         
@@ -25,21 +24,21 @@
             </div>
             
             <div class="container"  > 
-                <div class="col-md-6 cadastro  alinhamentoLogin ">
+                <div class="col-md-6 cadastro branco alinhamentoLogin ">
                     <h1>Efetue seu login</h1>
                     <form  action="index" method="">
                         <div class="form-group"> 
 
-                            Usu√°rio
+                            Usu·rio
                             </br>
-                            <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                            <input type="text" name="usuario" id="usuario" class="form-control corPlaceHolder " required="" placeholder="Digite o nome de Usu·rio">
 
                         </div>
                         <div class="form-group"> 
 
                             Senha
                             </br>
-                            <input type="text" name="senha" id="senha" class="form-control" required="">
+                            <input type="text" name="senha" id="senha" class=" form-control corPlaceHolder" required="" placeholder="Digite sua Senha">
 
                         </div>
                         <div class="form-group"> 

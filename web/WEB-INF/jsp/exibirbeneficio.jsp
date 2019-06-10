@@ -4,19 +4,18 @@
     Author     : Marcus
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!-- mapear boot por tags -->
 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <link rel="stylesheet" href="resources/css/principal.css"/>
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
         <script src="resources/js/bootstrap.js"></script> 
-        <title>BenefÃ­cios</title>
+        <title>Benefícios</title>
     </head>
     <body>
         <div class="container">
@@ -24,10 +23,10 @@
                 <thead>
                     <tr>    
                         <th>Nome</th>
-                        <th>NÃºmero da Guia</th>
+                        <th>Número da Guia</th>
                         <th>Valor</th>
-                        <th>Data InÃ­cio</th>
-                        <th>Data RenovaÃ§Ã£o</th>
+                        <th>Data Início</th>
+                        <th>Data Renovação</th>
                         <th>Justificativa</th>
                         <th>Status</th>
                     </tr>
