@@ -36,24 +36,18 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="boasvindas"  target="principal">Home </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        
+                        <li class="nav-item">                        
+                            <a class="nav-link" href="renderizarBuscarFamilia" id="navbarDropdownMenuLink" target="principal">
                                 Família
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="cadastrofamilia" target="principal">Cadastrar</a>
-                                <a class="dropdown-item" href="buscafamilia" target="principal">Buscar</a>
-                                <a class="dropdown-item" href="exibirfamilia" target="principal">Exibir</a>
-                                
-                            </div>
-                        </li> 
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Evento
+                                Agenda
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="renderizarCadastrarEvento" target="principal">Cadastrar</a>
-                                <a class="dropdown-item" href="renderizarBuscarEvento" target="principal">Buscar</a>
+                                <a class="dropdown-item" href="renderizarBuscarEvento" target="principal">Eventos</a>
                                 <a class="dropdown-item" href="renderizarExibirEvento" target="principal">Exibir</a>
                                 
                             </div>

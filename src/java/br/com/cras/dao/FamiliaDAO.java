@@ -1,7 +1,8 @@
-
 package br.com.cras.dao;
 
-import br.com.cras.dominio.Evento;
+
+
+import br.com.cras.dominio.Familia;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,60 +15,60 @@ import javax.persistence.Query;
  *
  * @author Ronnie
  */
-public class EventoDAO {
+public class FamiliaDAO {
 
     public EntityManager getEM() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("CrasPU");
         return factory.createEntityManager();
     }
 
-    public void adicionar(Evento evento) throws SQLException {
+    public void adicionar(Familia familia) throws SQLException {
         EntityManager em = getEM();
         em.getTransaction().begin();
-        em.persist(evento);
+        em.persist(familia);
         em.getTransaction().commit();
         em.close();
 
     }
 
-    public List<Evento> buscar() throws SQLException {
+    public List<Familia> buscar() throws SQLException {
         /*  EntityManager em = getEM();
 
         CriteriaQuery criteria = em.getCriteriaBuilder().createQuery();
-        criteria.select(criteria.from(Evento.class));
+        criteria.select(criteria.from(Familia.class));
 
-        List<Evento> lista = em.createQuery(criteria).getResultList();
+        List<Familia> lista = em.createQuery(criteria).getResultList();
 
         return lista;
          */
         EntityManager em = getEM();
-        List<Evento> lista;
+        List<Familia> lista;
         try {
-            Query q = em.createNamedQuery("Eventos.ativos");
+            Query q = em.createNamedQuery("Familias.ativos");
             lista = q.getResultList();
         } catch (Exception e) {
             lista = new ArrayList<>();
         }
-
+        
         return lista;
 
     }
-
-    public List<Evento> buscarNome(String nomeDoEvento) throws SQLException {
-        List<Evento> retorno = new ArrayList<>();
-        List<Evento> auxiliar;
+//rever
+    public List<Familia> buscarNome(String nomeDoFamilia) throws SQLException {
+        List<Familia> retorno = new ArrayList<>();
+        List<Familia> auxiliar;
 
         try {
             auxiliar = this.buscar();
             int tamanho = auxiliar.size();
             for (int k = 0; k < tamanho; k++) {
-                if (nomeDoEvento.equals(auxiliar.get(k).getNomeEvento())) {
+                if (nomeDoFamilia.equals(auxiliar.get(k).getResponsavel_familiar())) {
                     retorno.add(auxiliar.get(k));
                 }
             }
             /*
             for (int k = 0; k < tamanho; k++) {         
-                if (nomeDoEvento!=null&& auxiliar!=null&&nomeDoEvento.contains(auxiliar.get(k).getNomeEvento())){
+                if (nomeDoFamilia!=null&& auxiliar!=null&&nomeDoFamilia.contains(auxiliar.get(k).getNome())){
                     retorno.add(auxiliar.get(k));
                 }
             }
@@ -79,36 +80,36 @@ public class EventoDAO {
         return retorno;
     }
 
-    public Evento getEventoById(int id) {
+    public Familia getFamiliaById(int id) {
         EntityManager em = getEM();
-        Evento evento = null;
+        Familia familia = null;
         try {
             //Consulta uma pessoa pelo seu ID.
-            evento = em.find(Evento.class, id);
+            familia = em.find(Familia.class, id);
         } finally {
             em.close();
         }
-        return evento;
+        return familia;
     }
 
-    public void update(Evento evento) throws Exception {
+    public void update(Familia familia) throws Exception {
         EntityManager em = getEM();
         try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            System.out.println("Salvando Evento.");
-            evento = em.merge(evento);
+            familia = em.merge(familia);
             // Finaliza a transação.
             em.getTransaction().commit();
+            System.out.println("Salvando Familia.");
         } finally {
             em.close();
         }
     }
 
-    public void Editar(Evento evento) throws SQLException {
+    public void Editar(Familia familia) throws SQLException {
         EntityManager em = getEM();
         em.getTransaction().begin();
-        em.merge(evento);
+        em.merge(familia);
         em.getTransaction().commit();
         em.close();
     }
