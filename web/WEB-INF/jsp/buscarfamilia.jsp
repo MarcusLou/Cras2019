@@ -67,6 +67,7 @@
                                             <td> ${atributo.endereco}</td>
                                             <td> ${atributo.telefone_fixo}</td>
                                             <td> ${atributo.situacao_familiar}</td>
+                                            <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarAcessarFamilia/${atributo.id}'" >Acessar</button></td>  
                                             <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarEditarFamilia/${atributo.id}'" >Editar</button></td>  
                                             <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm" date-id="${atributo.id}" >Remover</button></td> 
                                         </tr>

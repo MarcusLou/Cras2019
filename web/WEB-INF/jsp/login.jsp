@@ -38,7 +38,7 @@
 
                             Senha
                             </br>
-                            <input type="text" name="senha" id="senha" class=" form-control corPlaceHolder" required="" placeholder="Digite sua Senha">
+                            <input type="password" name="senha" id="senha" class=" form-control corPlaceHolder" required="" placeholder="Digite sua Senha">
 
                         </div>
                         <div class="form-group"> 

@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/Cras/web/resources/css/principal.css</file>
-            <file>file:/C:/xampp/htdocs/Cras/src/conf/persistence.xml</file>
-            <file>file:/C:/xampp/htdocs/Cras/src/java/br/com/cras/controller/BeneficioController.java</file>
-            <file>file:/C:/xampp/htdocs/Cras/web/WEB-INF/jsp/cadastrarbeneficio.jsp</file>
-            <file>file:/C:/xampp/htdocs/Cras/web/WEB-INF/jsp/editarbeneficio.jsp</file>
-            <file>file:/C:/xampp/htdocs/Cras/web/WEB-INF/jsp/mensagem.jsp</file>
-            <file>file:/C:/xampp/htdocs/Cras/web/WEB-INF/jsp/buscarbeneficio.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

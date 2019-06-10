@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.portlet.ModelAndView;
 
 /**
  *
@@ -46,6 +45,19 @@ public class FamiliaController {
         return "buscarfamilia";
     }
    
+    @RequestMapping(value="/renderizarAcessarFamilia/{id}")  
+    public String renderizarAcessarFamilia(@PathVariable int id, Model model) throws SQLException  {  
+        FamiliaDAO dao = new FamiliaDAO();
+        //MembroFamiliaDAO dao = new MembroFamiliaDAO();
+        //
+        try {
+             model.addAttribute("buscaFamilia", dao.getFamiliaById(id));
+        } catch (Error e) {
+            System.out.println(e);
+        }     
+	return "acessarfamilia";
+    }
+           
     @RequestMapping(value="/renderizarEditarFamilia/{id}")  
     public String renderizarEdicaoFamilia(@PathVariable int id, ModelMap model) throws SQLException  {  
         FamiliaDAO dao = new FamiliaDAO();
@@ -79,7 +91,6 @@ public class FamiliaController {
     @RequestMapping("/cadastrarFamilia") //anotação para mapear o método
     public String cadastrarFamilia(Model model, Familia familia) {
         FamiliaDAO dao = new FamiliaDAO();
-
         try {
 
             dao.adicionar(familia);
@@ -103,11 +114,11 @@ public class FamiliaController {
     
     //rever
     @RequestMapping("/buscarFamilia")
-    public String buscarFamilia(Model model, @RequestParam("responsavel_familiar") String nome) throws SQLException {
+    public String buscarFamilia(Model model, @RequestParam("responsavel_familiar") String responsavel_familiar) throws SQLException {
         List<Familia> familias;
         FamiliaDAO dao = new FamiliaDAO();
         try {
-            model.addAttribute("buscaFamilia", dao.buscarNome(nome));
+            model.addAttribute("buscaFamilia", dao.buscarNomeResponsavel_familiar(responsavel_familiar));
         } catch (Error e) {
             System.out.println(e);
         }

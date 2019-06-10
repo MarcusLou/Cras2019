@@ -3,11 +3,9 @@
     Created on : 23/04/2019, 17:46:19
     Author     : Marcus
 --%>
-
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
-
 <!DOCTYPE html>
 <html>
     <head>

@@ -16,12 +16,12 @@
         <script src="<c:url value='../resources/js/popper.js' />" ></script>
         <script src="<c:url value='../resources/js/bootstrap.js' />"></script>
         
-        <title>Edição do Evento</title>
+        <title>Ediï¿½ï¿½o do Evento</title>
 </head>
 <body>
     <div class="container"> 
         <div class="col-md-6 cadastro">
- 	<h1>Edição do Evento</h1>
+ 	<h1>EdiÃ§Ã£o do Evento</h1>
             <form:form method="POST" modelAttribute="evento"  class="form-horizontal" action="/Cras/editarEvento">
                 <div class="form-group ">
                     <form:hidden path="id"  class="form-control input-sm"/>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    Endereço
+                    EndereÃ§o
                     </br>
                     <form:input type="text" path="endereco" id="endereco" class="form-control"/>
                     <div class="has-error">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    Data de Início
+                    Data de InÃ­cio
                     </br>
                     <form:input type="date" path="dataInicio" id="dataInicio" class="form-control"/>
                     <div class="has-error">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    Data de Término
+                    Data de TÃ©rmino
                     </br>
                     <form:input type="date" path="dataTermino" id="dataTermino" class="form-control"/>
                     <div class="has-error">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    Horário
+                    HorÃ¡rio
                     </br>
                     <form:input type="text" path="horario" id="horario" class="form-control"/>
                     <div class="has-error">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    Duração
+                    DuraÃ§Ã£o
                     </br>
                     <form:input type="text" path="duracao" id="duracao" class="form-control"/>
                     <div class="has-error">
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    Descrição
+                    DescriÃ§Ã£o
                     </br>
                     <form:input type="text" path="descricao" id="descricao" class="form-control"/>
                     <div class="has-error">

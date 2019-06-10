@@ -3,7 +3,6 @@
     Created on : 05/06/2019, 17:46:19
     Author     : Marcus
 --%>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
@@ -33,9 +32,6 @@
                     <form:hidden path="cod_cras"  class="form-control input-sm"/>
                 </div>
                 <div class="form-group ">
-                    <form:hidden path="comodos_moradia"  class="form-control input-sm"/>
-                </div>
-                <div class="form-group ">
                     <form:hidden path="idFuncionario"  class="form-control input-sm"/>
                 </div>
                 <div class="form-group ">
@@ -47,17 +43,75 @@
                         </div>
                 </div>
                 <div class="form-group ">
+                    Endereço
+                    </br>
+                    <form:textarea rows="2" type="text" path="endereco" id="endereco" class="form-control" required=""/>
+                    <div class="has-error">
+                        <form:errors path="endereco" class="help-inline"/>
+                    </div>
+                </div>
+                <div class="form-group ">
                     CEP
                     </br>
-                    <form:input type="number" path="cep" id="cep" class="form-control" required=""/>
+                    <form:input type="text" path="cep" id="cep" class="form-control cep" required=""/>
                     <div class="has-error">
                         <form:errors path="cep" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
+                    Telefone
+                    </br>
+                    <form:input type="text" path="telefone_fixo" id="telefone_fixo" class="form-control phone" required=""/>
+                    <div class="has-error">
+                        <form:errors path="telefone_fixo" class="help-inline"/>
+                    </div>
+                </div>               
+                <div class="form-group ">
+                    Tipo de Moradia
+                    </br>                    
+                    <form:select path="tipo_moradia" id="tipo_moradia" class="form-control" required="" name="tipo_moradia">
+                        <form:option value="" label="Escolha uma opção:"/>
+                        <form:option value="Própria" label="Própria"/>
+                        <form:option value="Alugada" label="Alugada"/>
+                        <form:option value="Cedida" label="Cedida"/>
+                        <form:option value="Morador Rua" label="Morador Rua"/>
+                        <form:option value="Outros" label="Outros"/>
+                    </form:select> 
+                    <div class="has-error">
+                        <form:errors path="tipo_moradia" class="help-inline"/>
+                    </div>
+                </div> 
+                <div class="form-group ">
+                    Cômodos da Moradia
+                    </br>                    
+                    <form:select path="comodos_moradia" id="comodos_moradia" class="form-control" required="" name="comodos_moradia">
+                        <form:option value="" label="Escolha uma opção:"/>
+                        <form:option value="0" label="nenhum"/>
+                        <form:option value="1" label="1 Cômodo"/>
+                        <form:option value="2" label="2 Cômodo"/>
+                        <form:option value="3" label="3 Cômodo"/>
+                        <form:option value="4" label="4 Cômodo"/>
+                        <form:option value="5" label="5 Cômodo"/>
+                        <form:option value="6" label="6 Cômodo"/>
+                        <form:option value="7" label="7 Cômodo"/>
+                        <form:option value="8<" label="8 ou mais Cômodo"/>
+                    </form:select>                    
+                    <div class="has-error">
+                        <form:errors path="comodos_moradia" class="help-inline"/>
+                    </div>
+                </div>        
+                <div class="form-group ">
+                    Condições da Moradia
+                    </br>
+                    <form:input type="text" path="condicoes_moradia" id="condicoes_moradia" class="form-control " required="" />
+                    <div class="has-error">
+                        <form:errors path="condicoes_moradia" class="help-inline"/>
+                    </div>
+                </div>
+                <div class="form-group ">
                     Situação da Familiar
                     </br>
-                    <form:input type="text" path="situacao_familiar" id="situacao_familiar" class="form-control situacao_familiar" required="" data-thousands="." data-decimal="," data-prefix="R$ " />
+                    <form:input type="text" path="situacao_familiar" id="situacao_familiar" class="form-control " required=""  />
                     <div class="has-error">
                         <form:errors path="situacao_familiar" class="help-inline"/>
                     </div>
@@ -70,29 +124,20 @@
                         <form:errors path="renda_familiar" class="help-inline"/>
                     </div>
                 </div>
-                    
                 <div class="form-group ">
-                    Data de Início
+                    Data de Cadastro
                     </br>
-                    <form:input type="date" path="data" id="data" class="form-control" required=""/>
+                    <form:input type="date" path="dataCad" id="dataCad" class="form-control" required=""/>
                     <div class="has-error">
-                        <form:errors path="data" class="help-inline"/>
+                        <form:errors path="dataCad" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
-                    Telefone
+                    Observações
                     </br>
-                    <form:input type="date" path="telefone_fixo" id="telefone_fixo" class="form-control" required=""/>
+                    <form:textarea rows="4" type="text" path="observacoes" id="observacoes" class="form-control" required=""/>
                     <div class="has-error">
-                        <form:errors path="telefone_fixo" class="help-inline"/>
-                    </div>
-                </div>
-                <div class="form-group ">
-                    Endereço
-                    </br>
-                    <form:input type="text" path="endereco" id="endereco" class="form-control" required=""/>
-                    <div class="has-error">
-                        <form:errors path="endereco" class="help-inline"/>
+                        <form:errors path="observacoes" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-actions floatRight">
@@ -103,6 +148,16 @@
 	</div>
     </div>
         <script type="text/javascript">
+            $(document).ready(function(){
+                $('.date').mask('11/11/1111');
+                $('.time').mask('00:00:00');
+                $('.date_time').mask('99/99/9999 00:00:00');
+                $('.cep').mask('99999-999');
+                $('.phone').mask('(99)#9999-9999');
+                $('.phone_with_ddd').mask('(99) 9999-9999');
+                $('.phone_us').mask('(999) 999-9999');
+                $('.mixed').mask('AAA 000-S0S');
+            });
             $(function(){
                 $("#renda_familiar").maskMoney();
             });

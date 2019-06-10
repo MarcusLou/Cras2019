@@ -3,8 +3,9 @@
     Created on : 05/06/2019, 13:16:18
     Author     : Marcus
 --%>
-
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!-- mapear boot por tags -->
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,7 +40,7 @@
                     <div class="form-group">  
                         <label for="numero_guia">Número da Guia</label>                          
                         </br>
-                        <input type="number" name="numero_guia" id="numero_guia" class="form-control" required="" placeholder="Qual o número do Documento: Guia de Solicitação do Benefício?">
+                        <input type="number" name="numero_guia" id="numero_guia" class="form-control" required="" pattern="[0-9]+$" placeholder="Qual o número do Documento: Guia de Solicitação do Benefício?">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaNumero_guia">?</button>
                         <div id="ajudaNumero_guia" class="collapse azulAjuda">
                             O número da Guia do Benefício é encontrado no sistema do Governo Federal ao solicitar o Benefício.
@@ -89,6 +90,17 @@
             </div>
         </div>
         <script type="text/javascript">
+            $(document).ready(function(){
+                $('.date').mask('11/11/1111');
+                $('.time').mask('00:00:00');
+                $('.date_time').mask('99/99/9999 00:00:00');
+                $('.cep').mask('99999-999');
+                $('.phone').mask('00 #0000-0000');
+                $('.phone_with_ddd').mask('(99) 9999-9999');
+                $('.phone_us').mask('(999) 999-9999');
+                $('.mixed').mask('AAA 000-S0S');
+                $('.mixed').mask('AAA 000-S0S');
+            });
             $(function(){
                 $("#valor").maskMoney();
             });

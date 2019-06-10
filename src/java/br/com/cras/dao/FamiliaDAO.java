@@ -54,7 +54,7 @@ public class FamiliaDAO {
 
     }
 //rever
-    public List<Familia> buscarNome(String nomeDoFamilia) throws SQLException {
+    public List<Familia> buscarNomeResponsavel_familiar(String responsavel_familiar) throws SQLException {
         List<Familia> retorno = new ArrayList<>();
         List<Familia> auxiliar;
 
@@ -62,7 +62,7 @@ public class FamiliaDAO {
             auxiliar = this.buscar();
             int tamanho = auxiliar.size();
             for (int k = 0; k < tamanho; k++) {
-                if (nomeDoFamilia.equals(auxiliar.get(k).getResponsavel_familiar())) {
+                if (responsavel_familiar.equals(auxiliar.get(k).getResponsavel_familiar())) {
                     retorno.add(auxiliar.get(k));
                 }
             }
