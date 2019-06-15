@@ -30,9 +30,6 @@
                     <form:hidden path="status"  class="form-control input-sm"/>
                 </div>
                 <div class="form-group ">
-                    <form:hidden path="cod_cras"  class="form-control input-sm"/>
-                </div>
-                <div class="form-group ">
                     <form:hidden path="idFuncionario"  class="form-control input-sm"/>
                 </div>
                 <div class="form-group ">
@@ -41,7 +38,7 @@
                 <div class="form-group ">
                     Nome
                     </br>
-                    <form:input type="text" path="nome" id="nome" class="form-control" required=""/>
+                    <form:input type="text" path="nome" id="nome" class="form-control" required="true"/>
                         <div class="has-error">
                             <form:errors path="nome" class="help-inline"/>
                         </div>
@@ -49,7 +46,7 @@
                 <div class="form-group ">
                     Função Familiar
                     </br>
-                    <form:input  type="text" path="funcao_familiar" id="funcao_familiar" class="form-control" required=""/>
+                    <form:input  type="text" path="funcao_familiar" id="funcao_familiar" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="funcao_familiar" class="help-inline"/>
                     </div>
@@ -57,7 +54,7 @@
                 <div class="form-group ">
                     CPF
                     </br>
-                    <form:input type="text" path="cpf" id="cpf" class="form-control cpf" required=""/>
+                    <form:input type="text" path="cpf" id="cpf" class="form-control cpf" required="true"/>
                     <div class="has-error">
                         <form:errors path="cpf" class="help-inline"/>
                     </div>
@@ -65,7 +62,7 @@
                 <div class="form-group ">
                     Cadastro Único
                     </br>
-                    <form:input type="number" path="cadastro_unico" id="cadastro_unico" class="form-control" required=""/>
+                    <form:input type="number" path="cadastro_unico" id="cadastro_unico" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="cadastro_unico" class="help-inline"/>
                     </div>
@@ -73,7 +70,7 @@
                 <div class="form-group ">
                     NIS
                     </br>
-                    <form:input type="number" path="nis" id="nis" class="form-control" required=""/>
+                    <form:input type="number" path="nis" id="nis" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="nis" class="help-inline"/>
                     </div>
@@ -81,7 +78,7 @@
                 <div class="form-group ">
                     RG
                     </br>
-                    <form:input type="number" path="rg" id="rg" class="form-control" required=""/>
+                    <form:input type="number" path="rg" id="rg" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="rg" class="help-inline"/>
                     </div>
@@ -89,7 +86,7 @@
                 <div class="form-group ">
                     Título
                     </br>
-                    <form:input type="number" path="titulo" id="titulo" class="form-control" required=""/>
+                    <form:input type="number" path="titulo" id="titulo" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="titulo" class="help-inline"/>
                     </div>
@@ -97,7 +94,7 @@
                 <div class="form-group ">
                     Telefone
                     </br>
-                    <form:input type="text" path="telefone" id="telefone" class="form-control phone" required=""/>
+                    <form:input type="text" path="telefone" id="telefone" class="form-control phone" required="true"/>
                     <div class="has-error">
                         <form:errors path="telefone" class="help-inline"/>
                     </div>
@@ -105,7 +102,7 @@
                 <div class="form-group ">
                     Celular
                     </br>
-                    <form:input type="text" path="celular" id="celular" class="form-control phone" required=""/>
+                    <form:input type="text" path="celular" id="celular" class="form-control phone" required="true"/>
                     <div class="has-error">
                         <form:errors path="celular" class="help-inline"/>
                     </div>
@@ -113,7 +110,7 @@
                 <div class="form-group ">
                     Relação Familiar
                     </br>                    
-                    <form:select path="relacao_familiar" id="relacao_familiar" class="form-control" required="" name="relacao_familiar">
+                    <form:select path="relacao_familiar" id="relacao_familiar" class="form-control" required="true" name="relacao_familiar">
                         <form:option value="" label="Escolha uma opção:"/>
                         <form:option value="Própria" label="Própria"/>
                         <form:option value="Alugada" label="Alugada"/>
@@ -128,7 +125,7 @@
                 <div class="form-group ">
                     Cor/Raça
                     </br>                    
-                    <form:select path="cor_raca" id="cor_raca" class="form-control" required="" name="cor_raca">
+                    <form:select path="cor_raca" id="cor_raca" class="form-control" required="true" name="cor_raca">
                         <form:option value="" label="Escolha uma opção:"/>
                         <form:option value="0" label="nenhum"/>
                         <form:option value="1" label="1 Cômodo"/>
@@ -147,7 +144,7 @@
                 <div class="form-group ">
                     Naturalidade
                     </br>
-                    <form:input type="text" path="naturalidade" id="naturalidade" class="form-control " required="" />
+                    <form:input type="text" path="naturalidade" id="naturalidade" class="form-control " required="true" />
                     <div class="has-error">
                         <form:errors path="naturalidade" class="help-inline"/>
                     </div>
@@ -155,7 +152,7 @@
                 <div class="form-group ">
                     Nome da Mãe
                     </br>
-                    <form:input type="text" path="nome_mae" id="nome_mae" class="form-control " required=""  />
+                    <form:input type="text" path="nome_mae" id="nome_mae" class="form-control " required="true"  />
                     <div class="has-error">
                         <form:errors path="nome_mae" class="help-inline"/>
                     </div>
@@ -163,7 +160,7 @@
                 <div class="form-group ">
                     Nome do Pai
                     </br>
-                    <form:input type="text" path="nome_pai" id="nome_pai" class="form-control " required=""  />
+                    <form:input type="text" path="nome_pai" id="nome_pai" class="form-control " required="true"  />
                     <div class="has-error">
                         <form:errors path="nome_pai" class="help-inline"/>
                     </div>
@@ -171,7 +168,7 @@
                 <div class="form-group ">
                     Certidão de Nascimento
                     </br>
-                    <form:input type="text" path="certidao_nascimento" id="certidao_nascimento" class="form-control " required="" data-thousands="." data-decimal="," data-prefix="R$ " />
+                    <form:input type="text" path="certidao_nascimento" id="certidao_nascimento" class="form-control " required="true" data-thousands="." data-decimal="," data-prefix="R$ " />
                     <div class="has-error">
                         <form:errors path="certidao_nascimento" class="help-inline"/>
                     </div>
@@ -179,7 +176,7 @@
                 <div class="form-group ">
                     Data de Nascimento
                     </br>
-                    <form:input type="date" path="data_nascimento" id="data_nascimento" class="form-control" required=""/>
+                    <form:input type="date" path="data_nascimento" id="data_nascimento" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="data_nascimento" class="help-inline"/>
                     </div>
@@ -187,7 +184,7 @@
                 <div class="form-group ">
                     Sexo
                     </br>
-                    <form:textarea rows="4" type="text" path="sexo" id="sexo" class="form-control" required=""/>
+                    <form:textarea rows="4" type="text" path="sexo" id="sexo" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="sexo" class="help-inline"/>
                     </div>

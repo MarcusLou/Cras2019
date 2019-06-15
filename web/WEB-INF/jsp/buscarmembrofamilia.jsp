@@ -36,7 +36,7 @@
                             </br>
                             <table width="700">
                                 <tr> 
-                                    <td colspan="90"><input type="text" name="nome" id="nome" class="form-control" required=""> </td>
+                                    <td colspan="90"><input type="text" name="nome" id="nome" class="form-control" required="true"> </td>
                                     <td colspan="10"> <input type="submit" id="submit" class="btn btn-primary" value="Buscar"> </td>
                                 </tr>
                             </table>

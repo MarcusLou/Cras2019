@@ -20,40 +20,37 @@
     </head>
     <body>
         <div class="container" > 
-                <div class="col-md-6 cadastro">
-                    <h1 class="black">Família</h1>
-                    <div class="container form-group">
-                            <table class="table">
-                                <thead>
-                                    <tr>    
-                                        <th>Nome Resposável</th>
-                                        <th>Endereço</th>
-                                        <th>Telefone</th>
-                                        <th>Situação Familiar</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach items= "${buscaFamilia}" var="atributo">
-                                         ${atributo.responsavel_familiar}
-                                    </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
-                        </div>
+            <div class="col-md-6 cadastro">
+                <h1 class="black">Família</h1>
+                <div class="container form-group">
+                    <table class="table">
+                        <thead>
+                            <tr>    
+                                <th>Nome Resposável</th>
+                                <th>Endereço</th>
+                                <th>Telefone</th>
+                                <th>Situação Familiar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items= "${buscaFamilia}" var="atributo">
+                                <div class="col-md-3">
+                                    ${atributo.responsavel_familiar}
+                                </div>
+                                <div class=" col-md-3">
+                                    ${atributo.endereco}
+                                </div>
+                                <div class=" col-md-1">
+                                    ${atributo.telefone}
+                                </div>
+                                <div class="col-md-1">
+                                    ${atributo.situacao_familiar}
+                                </div>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-       </body>
-       
-    <script type="text/javascript">
-        
-        
-        var id = null;
-        $('button.btn').on('click', function(e){
-          id = $(this).attr('date-id');
-        });
-        // callback modal abre
-        $('#confirm').on('show.bs.modal', function(e){
-            $("#cx").text(id);
-        });
-    </script>
-    
+        </div>
+    </body>
 </html>

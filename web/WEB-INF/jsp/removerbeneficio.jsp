@@ -16,13 +16,13 @@
         <script src="<c:url value='../resources/js/popper.js' />" ></script>
         <script src="<c:url value='../resources/js/bootstrap.js' />"></script>
         <script src="<c:url value='../resources/js/maskMoney.js' />"></script>
-        <title>Edição do Benefício</title>
+        <title>Remoção do Benefício</title>
 </head>
 <body>
     <div class="container"> 
         <div class="col-md-6 cadastro">
- 	<h1>Edição do Benefício</h1>
-            <form:form method="POST" modelAttribute="beneficio"  class="form-horizontal" action="/Cras/editarBeneficio">
+            <h1>Dados do Benefício a remover</h1>
+            <form:form method="POST" modelAttribute="beneficio"  class="form-horizontal" action="/Cras/removerBeneficio">
                 <div class="form-group ">
                     <form:hidden path="id"  class="form-control input-sm"/>
                 </div>
@@ -38,73 +38,60 @@
                 <div class="form-group ">
                     Nome do Benefício
                     </br>
-                    <form:input type="text" path="nome" id="nome" class="form-control" required="true"/>
-                        <div class="has-error">
-                            <form:errors path="nome" class="help-inline"/>
-                        </div>
+                    <form:input type="text" path="nome" id="nome" class="form-control"  readonly="true" />
                 </div>
                 <div class="form-group ">
                     Número da Guia
                     </br>
-                    <form:input type="number" path="numero_guia" id="numero_guia" class="form-control" required="true"/>
-                    <div class="has-error">
-                        <form:errors path="numero_guia" class="help-inline"/>
-                    </div>
+                    <form:input type="number" path="numero_guia" id="numero_guia" class="form-control"  readonly="true"/>
+
                 </div>
                 <div class="form-group ">
                     Valor
                     </br>
-                    <form:input type="text" path="valor" id="valor" class="form-control valor" required="true" data-thousands="." data-decimal="," data-prefix="R$ " />
-                    <div class="has-error">
-                        <form:errors path="valor" class="help-inline"/>
-                    </div>
+                    <form:input type="text" path="valor" id="valor" class="form-control valor"  data-thousands="." data-decimal="," data-prefix="R$ "  readonly="true"/>
+
                 </div>
                 <div class="form-group ">
                     Data de Início
                     </br>
-                    <form:input type="date" path="data_inicio" id="data_inicio" class="form-control" required="true"/>
-                    <div class="has-error">
-                        <form:errors path="data_inicio" class="help-inline"/>
-                    </div>
+                    <form:input type="date" path="data_inicio" id="data_inicio" class="form-control"  readonly="true"/>
+
                 </div>
                 <div class="form-group ">
                     Data de Renovação
                     </br>
-                    <form:input type="date" path="data_renovacao" id="data_renovacao" class="form-control" required="true"/>
-                    <div class="has-error">
-                        <form:errors path="data_renovacao" class="help-inline"/>
-                    </div>
+                    <form:input type="date" path="data_renovacao" id="data_renovacao" class="form-control"  readonly="true"/>
+
                 </div>
                 <div class="form-group ">
                     Justificativa
                     </br>
-                    <form:input type="text" path="justificativa" id="justificativa" class="form-control" required="true"/>
-                    <div class="has-error">
-                        <form:errors path="justificativa" class="help-inline"/>
-                    </div>
+                    <form:input type="text" path="justificativa" id="justificativa" class="form-control"  readonly="true"/>
+
                 </div>
                 <div class="form-actions floatRight">
-                    
+
                     <div  id="colaps" class="collapse"> 
                         <input type="button" value="Cancelar" class="btn btn-primary" onClick="history.go(-1)"> 
-                        <button type="submit" class="btn btn-danger">Click aqui para confirmar a Edição!</button>
+                        <button type="submit" class="btn btn-danger">Sim, desejo realmente <b>Remover!</b></button>
                         </br>
                     </div>
                     <div class="form-actions floatRight">
                         </br>
-                        
+
                         <input type="button" value="Voltar" class="btn btn-primary" onClick="history.go(-1)"> 
-                        <input type="button"  value="Editar" data-toggle="collapse" data-target="#colaps"  class="btn btn-warning">
-                
+                        <input type="button"  value="Remover" data-toggle="collapse" data-target="#colaps"  class="btn btn-warning">
+
                     </div>
                 </div>
-            </form:form>
-	</div>
+            </form:form>  
+        </div>
     </div>
-        <script type="text/javascript">
-            $(function(){
-                $("#valor").maskMoney();
-            });
-        </script>
 </body>
+    <script type="text/javascript">
+        $(function(){
+            $("#valor").maskMoney();
+        });
+    </script>
 </html>

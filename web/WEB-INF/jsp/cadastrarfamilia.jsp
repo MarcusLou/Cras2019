@@ -31,7 +31,7 @@
                     <div class="form-group">                         
                         <label for="responsavel_familiar">Nome do Responsável da Família</label>                        
                         </br>
-                        <input type="text" name="responsavel_familiar" id="responsavel_familiar" class="form-control" required="" placeholder="Qual o responsável da Família?" >
+                        <input type="text" name="responsavel_familiar" id="responsavel_familiar" class="form-control" required="true" placeholder="Qual o responsável da Família?" >
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaResponsavel_familiar">?</button>
                         <div id="ajudaResponsavel_familiar" class="collapse azulAjuda">
                             O nome responsável da Família é a pessoal que se responsabiliza por prestar informações da Família...
@@ -40,7 +40,7 @@
                     <div class="form-group"> 
                         <label for="endereco">Endereço</label> 
                         </br>
-                        <textarea rows="2" name="endereco" id="endereco" class="form-control"  required="" placeholder="Digite o endereço da Família..."></textarea>
+                        <textarea rows="2" name="endereco" id="endereco" class="form-control"  required="true" placeholder="Digite o endereço da Família..."></textarea>
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaEndereco">?</button>
                         <div id="ajudaEndereco" class="collapse azulAjuda">
                             O Endereço pode ser uma rua, avenida, ruela ou estrada, por exemplo. Deve conter todos os dados, assim como bairro. A cidade e Estado não é importante pois a Unidade do Cras nunca atende fora da região local. 
@@ -112,7 +112,7 @@
                      <div class="form-group"> 
                         <label for="situacao_familiar">Situação Familiar</label> 
                         </br>
-                        <input type="text" name="situacao_familiar" id="situacao_familiar" class="form-control" required="" placeholder="Qual a situação da Família?">
+                        <input type="text" name="situacao_familiar" id="situacao_familiar" class="form-control" required="true" placeholder="Qual a situação da Família?">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaSituacao_familiar">?</button>
                         <div id="ajudaSituacao_familiar" class="collapse azulAjuda">
                             A Situação Familiar é a informação atual em que a Família se encontra, sendo no estado mais vulneravél ao estável.
@@ -130,7 +130,7 @@
                     <div class="form-group"> 
                         <label for="dataCad">Data de Cadastro</label> 
                         </br>
-                        <input type="date" name="dataCad" id="dataCad" class="form-control" required="">
+                        <input type="date" name="dataCad" id="dataCad" class="form-control" required="true">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaData">?</button>
                         <div id="ajudaData" class="collapse azulAjuda">
                             Aqui devemos preencher o dia, mês e ano que a Famíla começou a ser atendida pelo CRAS.
@@ -139,7 +139,7 @@
                     <div class="form-group"> 
                         <label for="observacoes">Observações</label> 
                         </br>
-                        <textarea rows="4" name="observacoes" id="observacoes" class="form-control"  required="" placeholder="Digite observações sobre Família:"></textarea>
+                        <textarea rows="4" name="observacoes" id="observacoes" class="form-control"  required="true" placeholder="Digite observações sobre Família:"></textarea>
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaObservacoes">?</button>
                         <div id="ajudaObservacoes" class="collapse azulAjuda">
                             As observações devem ser sucintas, pertinentes a Família como um todo, relatando problemas que possam ser pertinete a todos. 

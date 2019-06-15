@@ -36,10 +36,7 @@ public class MembroFamilia implements Serializable {
     
     @Column(name = "sexo")
     private String sexo;
-    
-    @Column(name = "cod_cras")
-    private int cod_cras;
-    
+        
     @Column(name = "data_nascimento")
     private String data_nascimento;
     
@@ -125,14 +122,6 @@ public class MembroFamilia implements Serializable {
 
     public void setFuncao_familiar(String funcao_familiar) {
         this.funcao_familiar = funcao_familiar;
-    }
-
-    public int getCod_cras() {
-        return cod_cras;
-    }
-
-    public void setCod_cras(int cod_cras) {
-        this.cod_cras = cod_cras;
     }
 
     public String getData_nascimento() {

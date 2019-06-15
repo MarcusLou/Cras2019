@@ -26,7 +26,7 @@
                             
                             Nome do Evento
                             </br>
-                            <input type="text" name="nomeEvento" id="nomeEvento" class="form-control" required="">
+                            <input type="text" name="nomeEvento" id="nomeEvento" class="form-control" required="true">
 
                         </div>
                         

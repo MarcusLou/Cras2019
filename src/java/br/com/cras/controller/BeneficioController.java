@@ -57,6 +57,17 @@ public class BeneficioController {
 	return "editarbeneficio";
     } 
     
+    @RequestMapping(value="/renderizarRemoverBeneficio/{id}")  
+    public String renderizarRemoverBeneficio(@PathVariable int id, ModelMap model) throws SQLException  {  
+        BeneficioDAO dao = new BeneficioDAO();
+        try {
+             model.addAttribute("beneficio", dao.getBeneficioById(id));
+        } catch (Error e) {
+            System.out.println(e);
+        }     
+	return "removerbeneficio";
+    } 
+    
      @RequestMapping("/renderizarExibirBeneficio")
     public String renderizarExibirBeneficios(Model model) {
 
@@ -135,27 +146,24 @@ public class BeneficioController {
     
     //-------------------------------------Remover Beneficio---------------------------------------------------------------------
    
-     
-
-    @RequestMapping(value="/removerBeneficio/{id}", method = RequestMethod.GET)  
-    public String removerBeneficio(@PathVariable int id, Model model) throws SQLException, Exception  {  
-        
+     @RequestMapping(value="/removerBeneficio",method = RequestMethod.POST)  
+    public String removerBeneficio(@ModelAttribute("beneficio") Beneficio emp, ModelMap model) throws Exception{  
         BeneficioDAO dao = new BeneficioDAO();
-        
         try {
-            Beneficio beneficio = dao.getBeneficioById(id); 
-            beneficio.setStatus(false);
-            dao.update(beneficio);
+        
+            System.out.println("id is"+emp.getId());
+            emp.setStatus(false);
+            dao.update(emp);
             String retorno ="Beneficio removido";
             model.addAttribute("retorno", retorno); 
-            String retorno2 = "http://localhost:8084/Cras/renderizarBuscarBeneficio";
+            String retorno2 = "renderizarBuscarBeneficio";
             model.addAttribute("retorno2", retorno2);
-        } catch (Error e) {
+         } catch (Error e) {
             System.out.println(e);
-        }     
-        
-        return "mensagem";
-    } 
+        } 
+        return "mensagem";  
+    }  
+ 
     
 //    ---------------------------------------------------------------------------------------------------------------------
     

@@ -26,13 +26,12 @@
             <h1>Cadastre a família aqui!</h1>
             <div> 
                 <form action="cadastrarMembroFamilia" method="POST" >
-                    <input type="hidden" name="cod_cras" id="cod_cras" class="form-control" value="1">
                     <input type="hidden" name="familiaID" id="familiaID" class="form-control" value="1">
                     <input type="hidden" name="idFuncionario" id="idFuncionario" class="form-control" value="1">
                     <div class="form-group">                         
                         <label for="nome">Nome</label>                        
                         </br>
-                        <input type="text" name="nome" id="nome" class="form-control" required="" placeholder="Qual seu nome?" >
+                        <input type="text" name="nome" id="nome" class="form-control" required="true" placeholder="Qual seu nome?" >
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaNome">?</button>
                         <div id="ajudaNome" class="collapse azulAjuda">
                             O nome completo...
@@ -41,7 +40,7 @@
                     <div class="form-group"> 
                         <label for="funcao_familiar">Função Familiar</label> 
                         </br>
-                        <input  name="funcao_familiar" id="funcao_familiar" class="form-control"  required="" placeholder="Digite o endereço do Membro da Família...">
+                        <input  name="funcao_familiar" id="funcao_familiar" class="form-control"  required="true" placeholder="Digite o endereço do Membro da Família...">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaFuncao_familiar">?</button>
                         <div id="ajudaFuncao_familiar" class="collapse azulAjuda">
                             O Endereço pode ser uma rua, avenida, ruela ou estrada, por exemplo. Deve conter todos os dados, assim como bairro. A cidade e Estado não é importante pois a Unidade do Cras nunca atende fora da região local. 
@@ -158,7 +157,7 @@
                      <div class="form-group"> 
                         <label for="nome_pai">Nome do Pai</label> 
                         </br>
-                        <input type="text" name="nome_pai" id="nome_pai" class="form-control" required="" placeholder="Qual a situação do Membro da Família?">
+                        <input type="text" name="nome_pai" id="nome_pai" class="form-control" required="true" placeholder="Qual a situação do Membro da Família?">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaNome_pai">?</button>
                         <div id="ajudaNome_pai" class="collapse azulAjuda">
                             A Situação Familiar é a informação atual em que o Membro da Família se encontra, sendo no estado mais vulneravél ao estável.
@@ -167,7 +166,7 @@
                      <div class="form-group"> 
                         <label for="nome_pai">Nome da Mãe</label> 
                         </br>
-                        <input type="text" name="nome_mae" id="nome_mae" class="form-control" required="" placeholder="Qual a situação do Membro da Família?">
+                        <input type="text" name="nome_mae" id="nome_mae" class="form-control" required="true" placeholder="Qual a situação do Membro da Família?">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaNome_mae">?</button>
                         <div id="ajudaNome_mae" class="collapse azulAjuda">
                             A Situação Familiar é a informação atual em que o Membro da Família se encontra, sendo no estado mais vulneravél ao estável.
@@ -185,7 +184,7 @@
                     <div class="form-group"> 
                         <label for="data_nascimento">Data de Nascimento</label> 
                         </br>
-                        <input type="date" name="data_nascimento" id="data_nascimento" class="form-control" required="">
+                        <input type="date" name="data_nascimento" id="data_nascimento" class="form-control" required="true">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaData">?</button>
                         <div id="ajudaData" class="collapse azulAjuda">
                             Aqui devemos preencher o dia, mês e ano que a Famíla começou a ser atendida pelo CRAS.
@@ -194,7 +193,7 @@
                     <div class="form-group"> 
                         <label for="sexo">Sexo</label> 
                         </br>
-                        <input name="sexo" id="sexo" class="form-control"  required="" placeholder="Digite observações sobre Membro da Família:">
+                        <input name="sexo" id="sexo" class="form-control"  required="true" placeholder="Digite observações sobre Membro da Família:">
                         <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaSexo">?</button>
                         <div id="ajudaSexo" class="collapse azulAjuda">
                             As observações devem ser sucintas, pertinentes ao Membro da Família como um todo, relatando problemas que possam ser pertinete a todos. 

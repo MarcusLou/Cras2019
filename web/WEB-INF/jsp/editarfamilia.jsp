@@ -38,7 +38,7 @@
                 <div class="form-group ">
                     Nome do Responsável pela Família
                     </br>
-                    <form:input type="text" path="responsavel_familiar" id="responsavel_familiar" class="form-control" required=""/>
+                    <form:input type="text" path="responsavel_familiar" id="responsavel_familiar" class="form-control" required="true"/>
                         <div class="has-error">
                             <form:errors path="responsavel_familiar" class="help-inline"/>
                         </div>
@@ -46,7 +46,7 @@
                 <div class="form-group ">
                     Endereço
                     </br>
-                    <form:textarea rows="2" type="text" path="endereco" id="endereco" class="form-control" required=""/>
+                    <form:textarea rows="2" type="text" path="endereco" id="endereco" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="endereco" class="help-inline"/>
                     </div>
@@ -54,7 +54,7 @@
                 <div class="form-group ">
                     CEP
                     </br>
-                    <form:input type="text" path="cep" id="cep" class="form-control cep" required=""/>
+                    <form:input type="text" path="cep" id="cep" class="form-control cep" required="true"/>
                     <div class="has-error">
                         <form:errors path="cep" class="help-inline"/>
                     </div>
@@ -62,7 +62,7 @@
                 <div class="form-group ">
                     Telefone
                     </br>
-                    <form:input type="text" path="telefone_fixo" id="telefone_fixo" class="form-control phone" required=""/>
+                    <form:input type="text" path="telefone_fixo" id="telefone_fixo" class="form-control phone" required="true"/>
                     <div class="has-error">
                         <form:errors path="telefone_fixo" class="help-inline"/>
                     </div>
@@ -70,7 +70,7 @@
                 <div class="form-group ">
                     Tipo de Moradia
                     </br>                    
-                    <form:select path="tipo_moradia" id="tipo_moradia" class="form-control" required="" name="tipo_moradia">
+                    <form:select path="tipo_moradia" id="tipo_moradia" class="form-control" required="true" name="tipo_moradia">
                         <form:option value="" label="Escolha uma opção:"/>
                         <form:option value="Própria" label="Própria"/>
                         <form:option value="Alugada" label="Alugada"/>
@@ -85,7 +85,7 @@
                 <div class="form-group ">
                     Cômodos da Moradia
                     </br>                    
-                    <form:select path="comodos_moradia" id="comodos_moradia" class="form-control" required="" name="comodos_moradia">
+                    <form:select path="comodos_moradia" id="comodos_moradia" class="form-control" required="true" name="comodos_moradia">
                         <form:option value="" label="Escolha uma opção:"/>
                         <form:option value="0" label="nenhum"/>
                         <form:option value="1" label="1 Cômodo"/>
@@ -104,7 +104,7 @@
                 <div class="form-group ">
                     Condições da Moradia
                     </br>
-                    <form:input type="text" path="condicoes_moradia" id="condicoes_moradia" class="form-control " required="" />
+                    <form:input type="text" path="condicoes_moradia" id="condicoes_moradia" class="form-control " required="true" />
                     <div class="has-error">
                         <form:errors path="condicoes_moradia" class="help-inline"/>
                     </div>
@@ -112,7 +112,7 @@
                 <div class="form-group ">
                     Situação da Familiar
                     </br>
-                    <form:input type="text" path="situacao_familiar" id="situacao_familiar" class="form-control " required=""  />
+                    <form:input type="text" path="situacao_familiar" id="situacao_familiar" class="form-control " required="true"  />
                     <div class="has-error">
                         <form:errors path="situacao_familiar" class="help-inline"/>
                     </div>
@@ -120,7 +120,7 @@
                 <div class="form-group ">
                     Renda Familiar
                     </br>
-                    <form:input type="text" path="renda_familiar" id="renda_familiar" class="form-control renda_familiar" required="" data-thousands="." data-decimal="," data-prefix="R$ " />
+                    <form:input type="text" path="renda_familiar" id="renda_familiar" class="form-control renda_familiar" required="true" data-thousands="." data-decimal="," data-prefix="R$ " />
                     <div class="has-error">
                         <form:errors path="renda_familiar" class="help-inline"/>
                     </div>
@@ -128,7 +128,7 @@
                 <div class="form-group ">
                     Data de Cadastro
                     </br>
-                    <form:input type="date" path="dataCad" id="dataCad" class="form-control" required=""/>
+                    <form:input type="date" path="dataCad" id="dataCad" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="dataCad" class="help-inline"/>
                     </div>
@@ -136,7 +136,7 @@
                 <div class="form-group ">
                     Observações
                     </br>
-                    <form:textarea rows="4" type="text" path="observacoes" id="observacoes" class="form-control" required=""/>
+                    <form:textarea rows="4" type="text" path="observacoes" id="observacoes" class="form-control" required="true"/>
                     <div class="has-error">
                         <form:errors path="observacoes" class="help-inline"/>
                     </div>
