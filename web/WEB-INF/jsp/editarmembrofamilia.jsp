@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Editarfamilia
+    Document   : EditarMembroFamilia
     Created on : 05/06/2019, 17:46:19
     Author     : Marcus
 --%>
@@ -16,13 +16,13 @@
         <script src="<c:url value='../resources/js/popper.js' />" ></script>
         <script src="<c:url value='../resources/js/bootstrap.js' />"></script>
         <script src="<c:url value='../resources/js/maskMoney.js' />"></script>
-        <title>Edição da Família</title>
+        <title>Edição do Membro da Família</title>
 </head>
 <body>
     <div class="container"> 
         <div class="col-md-6 cadastro">
- 	<h1>Edição da Família</h1>
-            <form:form method="POST" modelAttribute="familia"  class="form-horizontal" action="/Cras/editarFamilia">
+ 	<h1>Edição do Membro da Família</h1>
+            <form:form method="POST" modelAttribute="membroFamilia"  class="form-horizontal" action="/Cras/editarMembroFamilia">
                 <div class="form-group ">
                     <form:hidden path="id"  class="form-control input-sm"/>
                 </div>
@@ -36,41 +36,84 @@
                     <form:hidden path="idFuncionario"  class="form-control input-sm"/>
                 </div>
                 <div class="form-group ">
-                    Nome do Responsável pela Família
+                    <form:hidden path="familiaID"  class="form-control input-sm"/>
+                </div>
+                <div class="form-group ">
+                    Nome
                     </br>
-                    <form:input type="text" path="responsavel_familiar" id="responsavel_familiar" class="form-control" required=""/>
+                    <form:input type="text" path="nome" id="nome" class="form-control" required=""/>
                         <div class="has-error">
-                            <form:errors path="responsavel_familiar" class="help-inline"/>
+                            <form:errors path="nome" class="help-inline"/>
                         </div>
                 </div>
                 <div class="form-group ">
-                    Endereço
+                    Função Familiar
                     </br>
-                    <form:textarea rows="2" type="text" path="endereco" id="endereco" class="form-control" required=""/>
+                    <form:input  type="text" path="funcao_familiar" id="funcao_familiar" class="form-control" required=""/>
                     <div class="has-error">
-                        <form:errors path="endereco" class="help-inline"/>
+                        <form:errors path="funcao_familiar" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
-                    CEP
+                    CPF
                     </br>
-                    <form:input type="text" path="cep" id="cep" class="form-control cep" required=""/>
+                    <form:input type="text" path="cpf" id="cpf" class="form-control cpf" required=""/>
                     <div class="has-error">
-                        <form:errors path="cep" class="help-inline"/>
+                        <form:errors path="cpf" class="help-inline"/>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    Cadastro Único
+                    </br>
+                    <form:input type="number" path="cadastro_unico" id="cadastro_unico" class="form-control" required=""/>
+                    <div class="has-error">
+                        <form:errors path="cadastro_unico" class="help-inline"/>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    NIS
+                    </br>
+                    <form:input type="number" path="nis" id="nis" class="form-control" required=""/>
+                    <div class="has-error">
+                        <form:errors path="nis" class="help-inline"/>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    RG
+                    </br>
+                    <form:input type="number" path="rg" id="rg" class="form-control" required=""/>
+                    <div class="has-error">
+                        <form:errors path="rg" class="help-inline"/>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    Título
+                    </br>
+                    <form:input type="number" path="titulo" id="titulo" class="form-control" required=""/>
+                    <div class="has-error">
+                        <form:errors path="titulo" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
                     Telefone
                     </br>
-                    <form:input type="text" path="telefone_fixo" id="telefone_fixo" class="form-control phone" required=""/>
+                    <form:input type="text" path="telefone" id="telefone" class="form-control phone" required=""/>
                     <div class="has-error">
-                        <form:errors path="telefone_fixo" class="help-inline"/>
+                        <form:errors path="telefone" class="help-inline"/>
+                    </div>
+                </div>          
+                <div class="form-group ">
+                    Celular
+                    </br>
+                    <form:input type="text" path="celular" id="celular" class="form-control phone" required=""/>
+                    <div class="has-error">
+                        <form:errors path="celular" class="help-inline"/>
                     </div>
                 </div>               
                 <div class="form-group ">
-                    Tipo de Moradia
+                    Relação Familiar
                     </br>                    
-                    <form:select path="tipo_moradia" id="tipo_moradia" class="form-control" required="" name="tipo_moradia">
+                    <form:select path="relacao_familiar" id="relacao_familiar" class="form-control" required="" name="relacao_familiar">
                         <form:option value="" label="Escolha uma opção:"/>
                         <form:option value="Própria" label="Própria"/>
                         <form:option value="Alugada" label="Alugada"/>
@@ -79,13 +122,13 @@
                         <form:option value="Outros" label="Outros"/>
                     </form:select> 
                     <div class="has-error">
-                        <form:errors path="tipo_moradia" class="help-inline"/>
+                        <form:errors path="relacao_familiar" class="help-inline"/>
                     </div>
                 </div> 
                 <div class="form-group ">
-                    Cômodos da Moradia
+                    Cor/Raça
                     </br>                    
-                    <form:select path="comodos_moradia" id="comodos_moradia" class="form-control" required="" name="comodos_moradia">
+                    <form:select path="cor_raca" id="cor_raca" class="form-control" required="" name="cor_raca">
                         <form:option value="" label="Escolha uma opção:"/>
                         <form:option value="0" label="nenhum"/>
                         <form:option value="1" label="1 Cômodo"/>
@@ -98,47 +141,55 @@
                         <form:option value="8<" label="8 ou mais Cômodo"/>
                     </form:select>                    
                     <div class="has-error">
-                        <form:errors path="comodos_moradia" class="help-inline"/>
+                        <form:errors path="cor_raca" class="help-inline"/>
                     </div>
                 </div>        
                 <div class="form-group ">
-                    Condições da Moradia
+                    Naturalidade
                     </br>
-                    <form:input type="text" path="condicoes_moradia" id="condicoes_moradia" class="form-control " required="" />
+                    <form:input type="text" path="naturalidade" id="naturalidade" class="form-control " required="" />
                     <div class="has-error">
-                        <form:errors path="condicoes_moradia" class="help-inline"/>
+                        <form:errors path="naturalidade" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
-                    Situação da Familiar
+                    Nome da Mãe
                     </br>
-                    <form:input type="text" path="situacao_familiar" id="situacao_familiar" class="form-control " required=""  />
+                    <form:input type="text" path="nome_mae" id="nome_mae" class="form-control " required=""  />
                     <div class="has-error">
-                        <form:errors path="situacao_familiar" class="help-inline"/>
+                        <form:errors path="nome_mae" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
-                    Renda Familiar
+                    Nome do Pai
                     </br>
-                    <form:input type="text" path="renda_familiar" id="renda_familiar" class="form-control renda_familiar" required="" data-thousands="." data-decimal="," data-prefix="R$ " />
+                    <form:input type="text" path="nome_pai" id="nome_pai" class="form-control " required=""  />
                     <div class="has-error">
-                        <form:errors path="renda_familiar" class="help-inline"/>
+                        <form:errors path="nome_pai" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
-                    Data de Cadastro
+                    Certidão de Nascimento
                     </br>
-                    <form:input type="date" path="dataCad" id="dataCad" class="form-control" required=""/>
+                    <form:input type="text" path="certidao_nascimento" id="certidao_nascimento" class="form-control " required="" data-thousands="." data-decimal="," data-prefix="R$ " />
                     <div class="has-error">
-                        <form:errors path="dataCad" class="help-inline"/>
+                        <form:errors path="certidao_nascimento" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
-                    Observações
+                    Data de Nascimento
                     </br>
-                    <form:textarea rows="4" type="text" path="observacoes" id="observacoes" class="form-control" required=""/>
+                    <form:input type="date" path="data_nascimento" id="data_nascimento" class="form-control" required=""/>
                     <div class="has-error">
-                        <form:errors path="observacoes" class="help-inline"/>
+                        <form:errors path="data_nascimento" class="help-inline"/>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    Sexo
+                    </br>
+                    <form:textarea rows="4" type="text" path="sexo" id="sexo" class="form-control" required=""/>
+                    <div class="has-error">
+                        <form:errors path="sexo" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-actions floatRight">

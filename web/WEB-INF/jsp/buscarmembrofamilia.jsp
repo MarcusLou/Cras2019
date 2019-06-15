@@ -1,11 +1,13 @@
 <%-- 
-    Document   : buscabeneficio
+    Document   : buscamembrofamilia
     Created on : 23/04/2019, 17:46:19
     Author     : Marcus
 --%>
+
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,16 +23,16 @@
         <script src="<c:url value='../resources/js/popper.js' />" ></script>
         <script src="<c:url value='../resources/js/bootstrap.js' />"></script>
         <script src="<c:url value='../resources/js/jquery.mask.js' />"></script>
-        <title>Busca de Beneficios</title>
+        <title>Busca de Membros da Família</title>
     </head>
     <body>
         <div class="container" > 
                 <div class="col-md-6 cadastro">
-                    <h1 class="black"> Buscar Benefício</h1>
-                    <form action="buscarBeneficio" method="POST">
+                    <h1 class="black"> Buscar Membro da Família</h1>
+                    <form action="buscarMembroFamilia" method="POST">
                         <div class="form-group black"> 
                             
-                            Nome do Benefício
+                            Nome
                             </br>
                             <table width="700">
                                 <tr> 
@@ -45,32 +47,31 @@
                         <div class="form-group"> 
 
                             
-                            <a class="btn btn-success" href="renderizarCadastrarBeneficio">Cadastrar Benefício!</a>
+                            <a class="btn btn-success" href="renderizarCadastrarMembroFamilia">Cadastrar Membro da Família!</a>
                         </div>
                         
                         <div class="container form-group">
                             <table class="table">
                                 <thead>
                                     <tr>    
-                                        <th>Nome</th>
-                                        <th>Número da Guia</th>
-                                        <th>Valor</th>
-                                        <th>Data Início</th>
-                                        <th>Data Renovação</th>
-                                        <th>Justificativa</th>
+                                        <th>Nome Resposável</th>
+                                        <th>Função Familiar</th>
+                                        <th>Telefone</th>
+                                        <th>Celular</th>
+                                        <th>Nome do Pai</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items= "${buscaBeneficio}" var="atributo">
+                                    <c:forEach items= "${buscaMembroFamilia}" var="atributo">
                                         <tr>
                                             <td> ${atributo.nome}</td>
-                                            <td> ${atributo.numero_guia}</td>
-                                            <td> ${atributo.valor}</td>
-                                            <td> ${atributo.data_inicio}</td>
-                                            <td> ${atributo.data_renovacao}</td>
-                                            <td> ${atributo.justificativa}</td>
-                                            <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarEditarBeneficio/${atributo.id}'" >Editar</button></td>  
-                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm" data-cod="${atributo.id}" date-id="${atributo.id}" >Remover</button></td> 
+                                            <td> ${atributo.funcao_familiar}</td>
+                                            <td> ${atributo.telefone}</td>
+                                            <td> ${atributo.celular}</td>
+                                            <td> ${atributo.nome_pai}</td>
+                                            <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarAcessarMembroFamilia/${atributo.id}'" >Acessar</button></td>  
+                                            <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarEditarMembroFamilia/${atributo.id}'" >Editar</button></td>  
+                                            <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm" date-id="${atributo.id}" >Remover</button></td> 
                                         </tr>
                                     </c:forEach>
                                 </tbody>
@@ -88,14 +89,26 @@
                         <div class="modal-body">
                               <h1>Tem certeza que quer <b>REMOVER</b> o Registro?!</h1>
                         </div>
-                        <div class="modal-footer">${atributo.id}
-                            <a href="removerBeneficio?${atributo.id}" class="btn btn-primary">Excluir</a>
+                        <div class="modal-footer">
                             <button type="button" class="btn btn-warning " data-dismiss="modal" onclick="cancelar()" >Cancelar</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"   onclick="window.location.href='removerBeneficio/1' ">Remover</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"   onclick="window.location.href='removerMembroFamilia/1' ">Remover</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </body>
+       </body>
+       
+    <script type="text/javascript">
+        
+        
+        var id = null;
+        $('button.btn').on('click', function(e){
+          id = $(this).attr('date-id');
+        });
+        // callback modal abre
+        $('#confirm').on('show.bs.modal', function(e){
+            $("#cx").text(id);
+        });
+    </script>
+    
 </html>
