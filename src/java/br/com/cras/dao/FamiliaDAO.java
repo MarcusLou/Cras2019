@@ -53,6 +53,23 @@ public class FamiliaDAO {
         return lista;
 
     }
+    
+    
+    public List<Familia> getFamiliaById2(int id) throws SQLException {
+        EntityManager em = getEM();
+        
+        List<Familia> lista = new ArrayList<>();
+        try {
+            //Consulta uma pessoa pelo seu ID.
+            Familia familia = em.find(Familia.class, id);
+            lista.add(familia);
+        } finally {
+            em.close();
+        }
+        return lista;
+               
+    }
+    
 //rever
     public List<Familia> buscarNomeResponsavel_familiar(String responsavel_familiar) throws SQLException {
         List<Familia> retorno = new ArrayList<>();

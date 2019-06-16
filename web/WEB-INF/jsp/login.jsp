@@ -3,7 +3,10 @@
     Created on : 14/04/2019, 20:43:33
     Author     : Ronnie
 --%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    isELIgnored="true"
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,9 +32,9 @@
                     <form  action="index" method="">
                         <div class="form-group"> 
 
-                            Usu·rio
+                            Usu√°rio
                             </br>
-                            <input type="text" name="usuario" id="usuario" class="form-control corPlaceHolder " required="" placeholder="Digite o nome de Usu·rio">
+                            <input type="text" name="usuario" id="usuario" class="form-control corPlaceHolder " required="" placeholder="Digite o nome de Usu√°rio">
 
                         </div>
                         <div class="form-group"> 
@@ -44,7 +47,7 @@
                         <div class="form-group"> 
 
                             <input type="submit" id="submit" class="btn btn-primary" value="Acessar">
-
+                            <a href="" class="branco"><b>Esqueceu sua senha?</b></a>
                         </div>
 
                 </form>

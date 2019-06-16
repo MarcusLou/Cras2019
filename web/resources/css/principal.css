@@ -3,8 +3,8 @@ html, body {
     padding: 0;
 }
 body{
-    color:   #8FBC8F;
-    background: #E5E5E5;
+    color: #FFF;
+    background: #FFF;
 }
 .perfil{
     color: #000;
@@ -179,4 +179,7 @@ input[type=number]::-webkit-outer-spin-button,
 
 .corPlaceHolder::placeholder {
   color: #ff2525;
+}
+#texto-b{
+  color: #000;
 }

@@ -83,7 +83,7 @@
                     </div>
                     <div class="form-group"> 
                         <input type="submit" id="submit" class="btn btn-primary" value="Cadastrar">
-                        <input type="button" value="Cancelar" class="btn btn-danger" onClick="history.go(-1)"> 
+                        <input type="button" value="Cancelar" class="btn btn-warning" onClick="history.go(-1)"> 
                     </div>
                 </form>
             </div>

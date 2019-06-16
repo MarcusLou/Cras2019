@@ -9,6 +9,7 @@ import br.com.cras.dao.FamiliaDAO;
 import br.com.cras.dominio.Familia;
 import java.sql.SQLException;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -44,14 +45,13 @@ public class FamiliaController {
         }
         return "buscarfamilia";
     }
+    
    
     @RequestMapping(value="/renderizarAcessarFamilia/{id}")  
     public String renderizarAcessarFamilia(@PathVariable int id, Model model) throws SQLException  {  
         FamiliaDAO dao = new FamiliaDAO();
-        //MembroFamiliaDAO dao = new MembroFamiliaDAO();
-        //
         try {
-             model.addAttribute("buscaFamilia", dao.getFamiliaById(id));
+             model.addAttribute("familiaSelecionada", dao.getFamiliaById2(id));
         } catch (Error e) {
             System.out.println(e);
         }     
