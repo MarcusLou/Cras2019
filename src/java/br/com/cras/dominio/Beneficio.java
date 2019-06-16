@@ -6,6 +6,8 @@
 package br.com.cras.dominio;
 
 import java.io.Serializable;
+import static java.sql.JDBCType.BLOB;
+import static java.sql.Types.BLOB;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import static org.apache.derby.client.am.ClientTypes.BLOB;
 
 @Entity
 @Table(name = "tbl_Beneficios")
@@ -79,11 +82,11 @@ public class Beneficio implements Serializable {
         this.nome = nome;
     }
 
-    public String getJustificativa() {
+    public String  getJustificativa() {
         return justificativa;
     }
 
-    public void setJustificativa(String justificativa) {
+    public void setJustificativa(String  justificativa) {
         this.justificativa = justificativa;
     }
 

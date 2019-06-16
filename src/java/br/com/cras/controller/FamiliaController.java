@@ -9,7 +9,6 @@ import br.com.cras.dao.FamiliaDAO;
 import br.com.cras.dominio.Familia;
 import java.sql.SQLException;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;

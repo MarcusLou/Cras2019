@@ -32,10 +32,10 @@ public class Familia implements Serializable {
     private String responsavel_familiar;
     
     @Column(name = "endereco")
-    private String endereco;
+    private StringBuffer endereco;
     
     @Column(name = "observacoes")
-    private String observacoes;
+    private StringBuffer observacoes;
     
     @Column(name = "cod_cras")
     private int cod_cras;
@@ -90,19 +90,19 @@ public class Familia implements Serializable {
         this.responsavel_familiar = responsavel_familiar;
     }
 
-    public String getObservacoes() {
+    public StringBuffer  getObservacoes() {
         return observacoes;
     }
 
-    public void setObservacoes(String observacoes) {
+    public void setObservacoes(StringBuffer  observacoes) {
         this.observacoes = observacoes;
     }
     
-    public String getEndereco() {
+    public StringBuffer  getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco(StringBuffer  endereco) {
         this.endereco = endereco;
     }
 

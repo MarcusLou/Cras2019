@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <link rel="stylesheet" href="resources/css/principal.css"/>
-        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"/>
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
         <script src="resources/js/bootstrap.js"></script> 

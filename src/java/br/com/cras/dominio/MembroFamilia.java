@@ -71,16 +71,16 @@ public class MembroFamilia implements Serializable {
     private int idFuncionario;
     
     @Column(name = "cadastro_unico")
-    private int cadastro_unico;
+    private String cadastro_unico;
     
     @Column(name = "nis")
-    private int nis;
+    private String nis;
     
     @Column(name = "rg")
-    private int rg;
+    private String rg;
     
     @Column(name = "titulo")
-    private int titulo;
+    private String titulo;
     
     @Column(name = "familiaID")
     private int familiaID;
@@ -208,35 +208,35 @@ public class MembroFamilia implements Serializable {
         this.cpf = cpf;
     }
 
-    public int getCadastro_unico() {
+    public String getCadastro_unico() {
         return cadastro_unico;
     }
 
-    public void setCadastro_unico(int cadastro_unico) {
+    public void setCadastro_unico(String cadastro_unico) {
         this.cadastro_unico = cadastro_unico;
     }
 
-    public int getNis() {
+    public String getNis() {
         return nis;
     }
 
-    public void setNis(int nis) {
+    public void setNis(String nis) {
         this.nis = nis;
     }
 
-    public int getRg() {
+    public String getRg() {
         return rg;
     }
 
-    public void setRg(int rg) {
+    public void setRg(String rg) {
         this.rg = rg;
     }
 
-    public int getTitulo() {
+    public String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(int titulo) {
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
