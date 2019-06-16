@@ -70,7 +70,16 @@ public class EventoController {
 
         return "exibirevento";
     }
-
+ @RequestMapping(value="/renderizarRemoverEvento/{id}")  
+    public String renderizarRemoverEvento(@PathVariable int id, ModelMap model) throws SQLException  {  
+        EventoDAO dao = new EventoDAO();
+        try {
+             model.addAttribute("evento", dao.getEventoById(id));
+        } catch (Error e) {
+            System.out.println(e);
+        }     
+	return "removerevento";
+    } 
     
 
 //--------------------------------------Cadastrar Evento---------------------------------------------------------------------
@@ -137,24 +146,23 @@ public class EventoController {
    
      
 
-    @RequestMapping(value="/removerEvento/{id}", method=RequestMethod.GET)  
-    public String removerEvento(@PathVariable int id, Model model) throws SQLException, Exception  {  
+   @RequestMapping(value="/removerEvento",method = RequestMethod.POST)  
+    public String removerEvento(@ModelAttribute("evento") Evento emp, ModelMap model) throws Exception{  
         EventoDAO dao = new EventoDAO();
-        
         try {
-            Evento evento = dao.getEventoById(id); 
-            evento.setStatus(false);
-            dao.update(evento);
-            String retorno = "Evento Removido";
-            model.addAttribute("retorno", retorno);
-            String retorno2 = "http://localhost:8080/Cras/renderizarBuscarEvento";
-            model.addAttribute("retorno2", retorno2);
-        } catch (Error e) {
-            System.out.println(e);
-        }     
         
-        return "mensagem";
-    } 
+            System.out.println("id is"+emp.getId());
+            emp.setStatus(false);
+            dao.update(emp);
+            String retorno ="Evento removido";
+            model.addAttribute("retorno", retorno); 
+            String retorno2 = "renderizarBuscarEvento";
+            model.addAttribute("retorno2", retorno2);
+         } catch (Error e) {
+            System.out.println(e);
+        } 
+        return "mensagem";  
+    }  
     
 //    ---------------------------------------------------------------------------------------------------------------------
     

@@ -56,6 +56,17 @@ public class AgendaAdministrativaController {
 	return "editaragendaadministrativa";
     } 
     
+    
+    @RequestMapping(value="/renderizarRemoverAgendaAdministrativa/{id}")  
+    public String renderizarRemoverAgendaAdministrativa(@PathVariable int id, ModelMap model) throws SQLException  {  
+        AgendaAdministrativaDAO dao = new AgendaAdministrativaDAO();
+        try {
+             model.addAttribute("AgendaAdministrativa", dao.getAgendaAdministrativaById(id));
+        } catch (Error e) {
+            System.out.println(e);
+        }     
+	return "removeragendaadministrativa";
+    } 
 
 //--------------------------------------Cadastrar Agenda Administrativa---------------------------------------------------------------------
     
@@ -122,28 +133,26 @@ public class AgendaAdministrativaController {
         return "mensagem";  
     }   
     
-    //-------------------------------------Remover Beneficio---------------------------------------------------------------------
+    //-------------------------------------Remover AgendaAdministrativa---------------------------------------------------------------------
    
-     
-
-    @RequestMapping(value="/removerAgendaAdministrativa/{id}", method = RequestMethod.GET)  
-    public String removerAgendaAdministrativa(@PathVariable int id, Model model) throws SQLException, Exception  {  
+     @RequestMapping(value="/removerAgendaAdministrativa",method = RequestMethod.POST)  
+    public String removerAgendaAdministrativa(@ModelAttribute("AgendaAdministrativa") AgendaAdministrativa emp, ModelMap model) throws Exception{  
         AgendaAdministrativaDAO dao = new AgendaAdministrativaDAO();
-        
         try {
-            AgendaAdministrativa agendaAdministrativa = dao.getAgendaAdministrativaById(id); 
-            agendaAdministrativa.setStatus(false);
-            dao.update(agendaAdministrativa);
-            String retorno ="Agenda Administrativa removida";
-            model.addAttribute("retorno", retorno); 
-            String retorno2 = "http://localhost:8080/Cras/renderizarBuscarAgendaAdministrativa";
-            model.addAttribute("retorno2", retorno2);
-        } catch (Error e) {
-            System.out.println(e);
-        }     
         
-        return "mensagem";
-    } 
+            System.out.println("id is"+emp.getId());
+            emp.setStatus(false);
+            dao.update(emp);
+            String retorno ="AgendaAdministrativa removida";
+            model.addAttribute("retorno", retorno); 
+            String retorno2 = "renderizarBuscarAgendaAdministrativa";
+            model.addAttribute("retorno2", retorno2);
+         } catch (Error e) {
+            System.out.println(e);
+        } 
+        return "mensagem";  
+    }   
+
     
 //    ---------------------------------------------------------------------------------------------------------------------
     

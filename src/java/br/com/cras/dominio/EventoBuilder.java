@@ -29,8 +29,7 @@ public class EventoBuilder {
     public EventoBuilder(String nomeEvento) {
          if (isNull(nomeEvento)) {
             throw new IllegalArgumentException("Não é possível criar uma notificacao sem nome");
-        }
-        this.status=true;
+         }
         this.nomeEvento = nomeEvento;
     }
     
