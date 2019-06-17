@@ -13,18 +13,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<c:url value='../resources/css/bootstrap.css' />" rel="stylesheet"></link>
 	<script src="<c:url value='../resources/js/jQuery.js' />"></script>
+         <script src="<c:url value='../resources/js/jquery.mask.js' />" ></script>
         <script src="<c:url value='../resources/js/popper.js' />" ></script>
         <script src="<c:url value='../resources/js/bootstrap.js' />"></script>
-        
+       
 	
         
-        <title>Edição do Evento</title>
+        <title>Edição Atendimento</title>
 </head>
 <body>
     <div class="container"> 
-        <div class="col-md-6 cadastro">
- 	<h1>Edição do Evento</h1>
-            <form:form method="POST" modelAttribute="evento"  class="form-horizontal" action="/Cras/editarEvento">
+        <div class="col-md-7 cadastro">
+ 	<h1>Edição Atendimento</h1>
+            <form:form method="POST" modelAttribute="atendimento"  class="form-horizontal" action="/Cras/editarAtendimento">
                 <div class="form-group ">
                     <form:hidden path="id"  class="form-control input-sm"/>
                 </div>
@@ -32,19 +33,19 @@
                     <form:hidden path="status"  class="form-control input-sm"/>
                 </div>
                 <div class="form-group ">
-                    Nome do Evento
+                    Nome do Membro da Família
                     </br>
-                    <form:input type="text" path="nomeEvento" id="nomeEvento" class="form-control" required="true"/>
+                    <form:input type="text" path="nomeMembro" id="nomeMembro" class="form-control" required="true"/>
                         <div class="has-error">
-                            <form:errors path="nomeEvento" class="help-inline"/>
+                            <form:errors path="nomeMembro" class="help-inline"/>
                         </div>
                 </div>
                 <div class="form-group ">
-                    Nome do Coordenador
+                    CPF
                     </br>
-                    <form:input type="text" path="nomeCoordenador" id="nomeCoordenador" class="form-control" required="true"/>
+                    <form:input type="text" path="cpf_membro" id="cpf_membro" class="form-control cpf_membro" required="true"/>
                     <div class="has-error">
-                        <form:errors path="nomeCoordenador" class="help-inline"/>
+                        <form:errors path="cpf_membro" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
@@ -56,19 +57,11 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    Data de Início
+                    Data
                     </br>
-                    <form:input type="date" path="dataInicio" id="dataInicio" class="form-control" required="true"/>
+                    <form:input type="date" path="data_atendimento" id="data_atendimento" class="form-control" required="true"/>
                     <div class="has-error">
-                        <form:errors path="dataInicio" class="help-inline"/>
-                    </div>
-                </div>
-                <div class="form-group ">
-                    Data de Término
-                    </br>
-                    <form:input type="date" path="dataTermino" id="dataTermino" class="form-control" required="true"/>
-                    <div class="has-error">
-                        <form:errors path="dataTermino" class="help-inline"/>
+                        <form:errors path="data_atendimento" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
@@ -95,7 +88,7 @@
                         <form:errors path="descricao" class="help-inline"/>
                     </div>
                 </div>
-               <div class="form-actions floatRight">
+                <div class="form-actions floatRight">
                     
                     <div  id="colaps" class="collapse"> 
                          
@@ -112,7 +105,14 @@
                     </div>
                 </div>
             </form:form>
-	</div>
+        </div>
     </div>
+
+ <script type="text/javascript">
+                  $(function(){
+                      $("#cpf_membro").mask("000.000.000-00");
+                  });
+ </script>
+
 </body>
 </html>

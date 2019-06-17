@@ -12,40 +12,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <script src="resources/js/jQuery.js"></script>
+         <script src="resources/js/jquery.mask.js" ></script>
         <script src="resources/js/popper.js" ></script>
         <script src="resources/js/bootstrap.js"></script>
-        <title>Cadastro de Eventos</title>
+        <title>Cadastrar Atendimento</title>
     </head>
     <body>
         <div class="container"> 
-            <div class="col-md-6 cadastro">
-            <h1>Cadastre seu evento aqui!</h1>
+            <div class="col-md-7 cadastro">
+            <h1>Cadastrar Atendimento!</h1>
             <div> 
-                <form action="cadastrarEvento" method="POST">
+                <form action="cadastrarAtendimento" method="POST">
                     <div class="form-group"> 
-                        Nome do Evento
+                        Nome do Membro da Família
                         </br>
-                        <input type="text" name="nomeEvento" id="nomeEvento" class="form-control" required="">
-                    </div>
-                    <div class="form-group"> 
-                        Nome do Coordenador
-                        </br>
-                        <input type="text" name="nomeCoordenador" id="nomeCoordenador" class="form-control" required="">
-                    </div>
-                     <div class="form-group"> 
-                        Endereco
-                        </br>
-                        <input type="text" name="endereco" id="endereco" placeholder="Ex.: Rua das flores nº 337, Jd. rio - São paulo, SP" class="form-control" required="" >
+                        <input type="text" name="nomeMembro" id="nomeMembro" class="form-control" required="">
                     </div>
                     <div class="form-group"> 
-                        Data de Início
+                        CPF
                         </br>
-                        <input type="date" name="dataInicio" id="dataInicio" class="form-control" required="" >
+                        <input type="text" name="cpf_membro" id="cpf_membro" class="form-control" required="" placeholder="Digite o cpf na forma 000.000.000-00">
                     </div>
-                     <div class="form-group"> 
-                        Data de Término 
+                    </div>
+                    
+                    <div class="form-group"> 
+                        Endereço
                         </br>
-                        <input type="date" name="dataTermino" id="dataTermino" class="form-control" required="" >
+                        <input type="text" name="endereco" id="endereco" class="form-control" required="" placeholder="Ex.: Rua das flores nº 337, Jd. rio - São paulo, SP">
+                    </div>
+                    <div class="form-group"> 
+                        Data
+                        </br>
+                        <input type="date" name="data_atendimento" id="data_atendimento" class="form-control" required="" >
                     </div>
                     <div class="form-group"> 
                         Horário
@@ -62,7 +60,7 @@
                         </br>
                         <input type="text" name="descricao" id="descricao" class="form-control">
                     </div>
-                    <div class="form-actions floatRight">
+                   <div class="form-actions floatRight">
                     
                     <div  id="colaps" class="collapse"> 
                          
@@ -77,9 +75,16 @@
                         <input type="button"  value="Cadastrar" data-toggle="collapse" data-target="#colaps"  class="btn btn-success">
                 
                     </div>
+                </div>
                 </form>
             </div>
         </div>
+        <script type="text/javascript">
+                  $(function(){
+                      $("#cpf_membro").mask("000.000.000-00");
+                  });
+        </script>
+    
     </body>
 </html>
 

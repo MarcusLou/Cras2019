@@ -42,20 +42,18 @@
                                 Família
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="cadastrofamilia" target="principal">Cadastrar</a>
-                                <a class="dropdown-item" href="buscafamilia" target="principal">Buscar</a>
-                                <a class="dropdown-item" href="exibirfamilia" target="principal">Exibir</a>
-                                
+      
+                                <a class="dropdown-item" href="renderizarBuscarAtendimento" target="principal">Atendimento</a>
+                                <a class="dropdown-item" href="renderizarBuscarDespesas" target="principal">Despesas</a>
                             </div>
                         </li> 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Evento
+                                Agenda
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="renderizarCadastrarEvento" target="principal">Cadastrar</a>
-                                <a class="dropdown-item" href="renderizarBuscarEvento" target="principal">Buscar</a>
-                                <a class="dropdown-item" href="renderizarExibirEvento" target="principal">Exibir</a>
+                                <a class="dropdown-item" href="renderizarBuscarEvento" target="principal">Evento</a>
+                                <a class="dropdown-item" href="renderizarBuscarAgendaAdministrativa" target="principal">Agenda Administrativa</a>
                                 
                             </div>
                         </li> 

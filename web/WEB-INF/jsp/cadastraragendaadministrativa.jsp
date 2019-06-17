@@ -14,38 +14,29 @@
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
         <script src="resources/js/bootstrap.js"></script>
-        <title>Cadastro de Eventos</title>
+        <title>Cadastrar Agenda Administrativa</title>
     </head>
     <body>
         <div class="container"> 
-            <div class="col-md-6 cadastro">
-            <h1>Cadastre seu evento aqui!</h1>
+            <div class="col-md-7 cadastro">
+            <h1>Cadastrar Agenda Administrativa!</h1>
             <div> 
-                <form action="cadastrarEvento" method="POST">
+                <form action="cadastrarAgendaAdministrativa" method="POST">
                     <div class="form-group"> 
-                        Nome do Evento
+                        Nome do Funcionário
                         </br>
-                        <input type="text" name="nomeEvento" id="nomeEvento" class="form-control" required="">
-                    </div>
-                    <div class="form-group"> 
-                        Nome do Coordenador
-                        </br>
-                        <input type="text" name="nomeCoordenador" id="nomeCoordenador" class="form-control" required="">
-                    </div>
-                     <div class="form-group"> 
-                        Endereco
-                        </br>
-                        <input type="text" name="endereco" id="endereco" placeholder="Ex.: Rua das flores nº 337, Jd. rio - São paulo, SP" class="form-control" required="" >
+                        <input type="text" name="nomeFuncionario" id="nomeFuncionario" class="form-control" required="">
                     </div>
                     <div class="form-group"> 
-                        Data de Início
+                        Tipo de Agendamento
                         </br>
-                        <input type="date" name="dataInicio" id="dataInicio" class="form-control" required="" >
+                        <input type="text" name="tipoAgendamento" id="tipoAgendamento" placeholder="Visita, Atividades Internas..." class="form-control" required="">
                     </div>
-                     <div class="form-group"> 
-                        Data de Término 
+                    </div>
+                    <div class="form-group"> 
+                        Data
                         </br>
-                        <input type="date" name="dataTermino" id="dataTermino" class="form-control" required="" >
+                        <input type="date" name="data_agenda" id="data_agenda" class="form-control" required="" >
                     </div>
                     <div class="form-group"> 
                         Horário

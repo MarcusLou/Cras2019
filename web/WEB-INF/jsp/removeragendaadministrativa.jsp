@@ -15,16 +15,16 @@
 	<script src="<c:url value='../resources/js/jQuery.js' />"></script>
         <script src="<c:url value='../resources/js/popper.js' />" ></script>
         <script src="<c:url value='../resources/js/bootstrap.js' />"></script>
-        
+ 
 	
         
-        <title>Edição do Evento</title>
+        <title>Remover Agenda Administrativa</title>
 </head>
 <body>
     <div class="container"> 
-        <div class="col-md-6 cadastro">
- 	<h1>Edição do Evento</h1>
-            <form:form method="POST" modelAttribute="evento"  class="form-horizontal" action="/Cras/editarEvento">
+        <div class="col-md-7 cadastro">
+ 	<h1>Remoção Agenda Administrativa</h1>
+            <form:form method="POST" modelAttribute="AgendaAdministrativa"  class="form-horizontal" action="/Cras/removerAgendaAdministrativa">
                 <div class="form-group ">
                     <form:hidden path="id"  class="form-control input-sm"/>
                 </div>
@@ -32,49 +32,33 @@
                     <form:hidden path="status"  class="form-control input-sm"/>
                 </div>
                 <div class="form-group ">
-                    Nome do Evento
+                    Nome do Funcionário
                     </br>
-                    <form:input type="text" path="nomeEvento" id="nomeEvento" class="form-control" required="true"/>
+                    <form:input type="text" path="nomeFuncionario" id="nomeFuncionario" class="form-control" readonly="true"/>
                         <div class="has-error">
-                            <form:errors path="nomeEvento" class="help-inline"/>
+                            <form:errors path="nomeFuncionario" class="help-inline"/>
                         </div>
                 </div>
                 <div class="form-group ">
-                    Nome do Coordenador
+                    Tipo de Agendamento
                     </br>
-                    <form:input type="text" path="nomeCoordenador" id="nomeCoordenador" class="form-control" required="true"/>
+                    <form:input type="text" path="tipoAgendamento" id="tipoAgendamento" class="form-control" readonly="true"/>
                     <div class="has-error">
-                        <form:errors path="nomeCoordenador" class="help-inline"/>
+                        <form:errors path="tipoAgendamento" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
-                    Endereço
+                    Data
                     </br>
-                    <form:input type="text" path="endereco" id="endereco" class="form-control" required="true"/>
+                    <form:input type="date" path="data_agenda" id="data_agenda" class="form-control" readonly="true"/>
                     <div class="has-error">
-                        <form:errors path="endereco" class="help-inline"/>
-                    </div>
-                </div>
-                <div class="form-group ">
-                    Data de Início
-                    </br>
-                    <form:input type="date" path="dataInicio" id="dataInicio" class="form-control" required="true"/>
-                    <div class="has-error">
-                        <form:errors path="dataInicio" class="help-inline"/>
-                    </div>
-                </div>
-                <div class="form-group ">
-                    Data de Término
-                    </br>
-                    <form:input type="date" path="dataTermino" id="dataTermino" class="form-control" required="true"/>
-                    <div class="has-error">
-                        <form:errors path="dataTermino" class="help-inline"/>
+                        <form:errors path="data_agenda" class="help-inline"/>
                     </div>
                 </div>
                 <div class="form-group ">
                     Horário
                     </br>
-                    <form:input type="time" path="horario" id="horario" class="form-control" required="true"/>
+                    <form:input type="time" path="horario" id="horario" class="form-control" readonly="true"/>
                     <div class="has-error">
                         <form:errors path="horario" class="help-inline"/>
                     </div>
@@ -82,7 +66,7 @@
                 <div class="form-group ">
                     Duração
                     </br>
-                    <form:input type="time" path="duracao" id="duracao" class="form-control"/>
+                    <form:input type="time" path="duracao" id="duracao" class="form-control" readonly="true"/>
                     <div class="has-error">
                         <form:errors path="duracao" class="help-inline"/>
                     </div>
@@ -90,24 +74,24 @@
                 <div class="form-group ">
                     Descrição
                     </br>
-                    <form:input type="text" path="descricao" id="descricao" class="form-control"/>
+                    <form:input type="text" path="descricao" id="descricao" class="form-control" readonly="true"/>
                     <div class="has-error">
                         <form:errors path="descricao" class="help-inline"/>
                     </div>
                 </div>
-               <div class="form-actions floatRight">
+                <div class="form-actions floatRight">
                     
                     <div  id="colaps" class="collapse"> 
                          
-                        <button type="submit" class="btn btn-danger">Clique aqui para confirmar a Edição!</button>
-                       <label><b>Clique no botão "Editar" para encerrar a confirmação</b></label>
+                        <button type="submit" class="btn btn-danger">Clique aqui para confirmar a Remoção!</button>
+                        <label><b>Clique no botão "remover" para encerrar a confirmação</b></label>
                         </br>
                     </div>
                     <div class="form-actions floatRight">
                         </br>
                         
                         <input type="button" value="Voltar" class="btn btn-primary" onClick="history.go(-1)"> 
-                        <input type="button"  value="Editar" data-toggle="collapse" data-target="#colaps"  class="btn btn-warning">
+                        <input type="button"  value="Remover" data-toggle="collapse" data-target="#colaps"  class="btn btn-danger">
                 
                     </div>
                 </div>
