@@ -33,6 +33,17 @@ public class MembroFamiliaController {
         return "cadastrarmembrofamilia";
     }
     
+    @RequestMapping(value="/renderizarAcessarMembroFamilia/{id}")  
+    public String renderizarAcessarFamilia(@PathVariable int id, Model model) throws SQLException  {  
+        MembroFamiliaDAO dao = new MembroFamiliaDAO();
+        try {
+             model.addAttribute("membroFamiliaSelecionada", dao.getMembroFamiliaById2(id));
+        } catch (Error e) {
+            System.out.println(e);
+        }     
+	return "acessarmembrofamilia";
+    }
+    
     @RequestMapping("/renderizarBuscarMembroFamilia")
     public String renderizarBuscaMembroFamilia(Model model) throws SQLException {
         MembroFamiliaDAO dao = new MembroFamiliaDAO();
@@ -83,7 +94,16 @@ public class MembroFamiliaController {
         return "exibirmembrofamilia";
     }
 
-    
+    @RequestMapping(value="/renderizarRemoverMembroFamilia/{id}")  
+    public String renderizarRemoverMembroFamilia(@PathVariable int id, ModelMap model) throws SQLException  {  
+        MembroFamiliaDAO dao = new MembroFamiliaDAO();
+        try {
+             model.addAttribute("membroFamilia", dao.getMembroFamiliaById(id));
+        } catch (Error e) {
+            System.out.println(e);
+        }     
+	return "removermembrofamilia";
+    } 
 
 //--------------------------------------Cadastrar MembroFamilia---------------------------------------------------------------------
     
@@ -93,7 +113,7 @@ public class MembroFamiliaController {
         try {
 
             dao.adicionar(membroFamilia);
-            String retorno = "Benefício cadastrado";
+            String retorno = "Membro da Família Cadastrado";
             model.addAttribute("retorno", retorno);
             String retorno2 = "renderizarBuscarMembroFamilia";
             model.addAttribute("retorno2", retorno2);
@@ -133,7 +153,7 @@ public class MembroFamiliaController {
         
             System.out.println("id is"+emp.getId());
             dao.update(emp); 
-            String retorno = "Benefício atualizado";
+            String retorno = "Membro da Família Atualizado";
             model.addAttribute("retorno", retorno);
             String retorno2 = "renderizarBuscarMembroFamilia";
             model.addAttribute("retorno2", retorno2);
@@ -147,25 +167,23 @@ public class MembroFamiliaController {
    
      
 
-    @RequestMapping(value="/removerMembroFamilia/{id}", method = RequestMethod.GET)  
-    public String removerMembroFamilia(@PathVariable int id, Model model) throws SQLException, Exception  {  
-        
+    @RequestMapping(value="/removerMembroFamilia",method = RequestMethod.POST)  
+    public String removerFamilia(@ModelAttribute("membroFamilia") MembroFamilia emp, ModelMap model) throws Exception{  
         MembroFamiliaDAO dao = new MembroFamiliaDAO();
-        
         try {
-            MembroFamilia membroFamilia = dao.getMembroFamiliaById(id); 
-            membroFamilia.setStatus(false);
-            dao.update(membroFamilia);
-            String retorno ="Membro Familia removido";
-            model.addAttribute("retorno", retorno); 
-            String retorno2 = "http://localhost:8084/Cras/renderizarBuscarMembroFamilia";
-            model.addAttribute("retorno2", retorno2);
-        } catch (Error e) {
-            System.out.println(e);
-        }     
         
-        return "mensagem";
-    } 
+            System.out.println("id is"+emp.getId());
+            emp.setStatus(false);
+            dao.update(emp);
+            String retorno ="Membro da Família Removido";
+            model.addAttribute("retorno", retorno); 
+            String retorno2 = "renderizarBuscarMembroFamilia";
+            model.addAttribute("retorno2", retorno2);
+         } catch (Error e) {
+            System.out.println(e);
+        } 
+        return "mensagem";  
+    }  
     
 //    ---------------------------------------------------------------------------------------------------------------------
     

@@ -82,7 +82,16 @@ public class FamiliaController {
 
         return "exibirfamilia";
     }
-
+    @RequestMapping(value="/renderizarRemoverFamilia/{id}")  
+    public String renderizarRemoverFamilia(@PathVariable int id, ModelMap model) throws SQLException  {  
+        FamiliaDAO dao = new FamiliaDAO();
+        try {
+             model.addAttribute("familia", dao.getFamiliaById(id));
+        } catch (Error e) {
+            System.out.println(e);
+        }     
+	return "removerfamilia";
+    } 
     
 
 //--------------------------------------Cadastrar Familia---------------------------------------------------------------------
@@ -144,28 +153,24 @@ public class FamiliaController {
     }   
     
     //-------------------------------------Remover Familia---------------------------------------------------------------------
-   
-     
-
-    @RequestMapping(value="/removerFamilia/{id}", method = RequestMethod.GET)  
-    public String removerFamilia(@PathVariable int id, Model model) throws SQLException, Exception  {  
         
+    @RequestMapping(value="/removerFamilia",method = RequestMethod.POST)  
+    public String removerFamilia(@ModelAttribute("beneficio") Familia emp, ModelMap model) throws Exception{  
         FamiliaDAO dao = new FamiliaDAO();
-        
         try {
-            Familia familia = dao.getFamiliaById(id); 
-            familia.setStatus(false);
-            dao.update(familia);
-            String retorno ="Familia removido";
-            model.addAttribute("retorno", retorno); 
-            String retorno2 = "http://localhost:8084/Cras/renderizarBuscarFamilia";
-            model.addAttribute("retorno2", retorno2);
-        } catch (Error e) {
-            System.out.println(e);
-        }     
         
-        return "mensagem";
-    } 
+            System.out.println("id is"+emp.getId());
+            emp.setStatus(false);
+            dao.update(emp);
+            String retorno ="Familia removida";
+            model.addAttribute("retorno", retorno); 
+            String retorno2 = "renderizarBuscarFamilia";
+            model.addAttribute("retorno2", retorno2);
+         } catch (Error e) {
+            System.out.println(e);
+        } 
+        return "mensagem";  
+    }  
     
 //    ---------------------------------------------------------------------------------------------------------------------
     

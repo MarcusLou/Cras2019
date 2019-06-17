@@ -91,7 +91,21 @@ public class MembroFamiliaDAO {
         }
         return membroFamilia;
     }
-
+    
+    public List<MembroFamilia> getMembroFamiliaById2(int id) throws SQLException {
+        EntityManager em = getEM();
+        
+        List<MembroFamilia> lista = new ArrayList<>();
+        try {
+            //Consulta uma pessoa pelo seu ID.
+            MembroFamilia membroFamilia = em.find(MembroFamilia.class, id);
+            lista.add(membroFamilia);
+        } finally {
+            em.close();
+        }
+        return lista;
+               
+    }
     public void update(MembroFamilia membroFamilia) throws Exception {
         EntityManager em = getEM();
         try {

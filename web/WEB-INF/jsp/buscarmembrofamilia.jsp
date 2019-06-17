@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <link rel="stylesheet" href="resources/css/principal.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
         <script src="resources/js/bootstrap.js"></script> 

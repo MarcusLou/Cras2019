@@ -42,11 +42,6 @@
                                 Família
                             </a>
                         </li>
-                        <li class="nav-item">                        
-                            <a class="nav-link" href="renderizarBuscarMembroFamilia" id="navbarDropdownMenuLink" target="principal">
-                                Membro de Família
-                            </a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Agenda
@@ -56,14 +51,7 @@
                                 <a class="dropdown-item" href="renderizarExibirEvento" target="principal">Exibir</a>
                                 
                             </div>
-                        </li> 
-                        <li class="nav-item">                        
-                            <a class="nav-link" href="renderizarBuscarBeneficio" id="navbarDropdownMenuLink" target="principal">
-                                Benefício
-                            </a>
-                        </li>
-                        
-                    
+                        </li>   
                     </ul>
                     <ul class="navbar-nav navbar-right">
                         <li class="nav-item"><a class="nav-link" href="renderizarLogin"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

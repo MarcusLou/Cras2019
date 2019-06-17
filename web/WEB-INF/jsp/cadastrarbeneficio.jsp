@@ -21,11 +21,21 @@
         <title>Cadastro de Benefícios</title>
     </head>
     <body>
-        <button style="font-size:24px" class="btn btn-sm btn-light" onClick="history.go(-1)" title="Voltar a página anterior!">
-          <i class="material-icons">undo</i>Voltar
-        </button>
-        <div class="container"> 
-            <h1>Cadastre seu benefício aqui!</h1>
+        <div class="container">             
+            <div class="row">
+                <div class="col-2">
+                    <button style="font-size:24px" class="btn btn-sm btn-light" onClick="history.go(-1)" title="Voltar a página anterior!">
+                        <i class="material-icons">undo</i>Voltar
+                    </button>
+                </div>
+                <div class="col">
+                    <h1 class="black text-center">Cadastre seu benefício aqui!</h1>
+                </div>
+                <div class="col-2">
+                    <h1 class="black">&nbsp;</h1>
+                </div>
+            </div>
+            </br>
             <form action="cadastrarBeneficio" method="POST" >
                 <input type="hidden" name="familiaID" id="familiaID" class="form-control" value="1">
                 <input type="hidden" name="idFuncionario" id="idFuncionario" class="form-control" value="1">
@@ -51,7 +61,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <input type="number" name="numero_guia" id="numero_guia" class="form-control" required="true" pattern="[0-9]+$" placeholder="Qual o número do Documento: Guia de Solicitação do Benefício?">
+                            <input type="number" name="numero_guia" id="numero_guia" class="form-control" required="true" pattern="[0-9]+$" placeholder="Número da Guia de Solicitação do Benefício">
                             <button type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaNumero_guia">?</button>
                             <div id="ajudaNumero_guia" class="collapse azulAjuda">
                                 O número da Guia do Benefício é encontrado no sistema do Governo Federal ao solicitar o Benefício.

@@ -28,54 +28,78 @@
                     </button>
                 </div>
                 <div class="col">
-                    <h1 class="black text-center">Dados do Benefício a remover</h1>
+                    <h1 class="black text-center">Dados da Família a Remover</h1>
                 </div>
                 <div class="col-2">
                     <h1 class="black">&nbsp;</h1>
                 </div>
             </div>
             </br>
-            <form:form method="POST" modelAttribute="beneficio"  class="form-horizontal" action="/Cras/removerBeneficio">
+            <form:form method="POST" modelAttribute="familia"  class="form-horizontal" action="/Cras/removerFamilia">
                 <form:hidden path="id"  class="form-control input-sm"/>
                 <form:hidden path="status"  class="form-control input-sm"/>
-                <form:hidden path="familiaID"  class="form-control input-sm"/>
+                <form:hidden path="cod_cras"  class="form-control input-sm"/>
                 <form:hidden path="idFuncionario"  class="form-control input-sm"/>
                 <div class="row form-group">    
-                    <div class="col-8">Nome do Benefício</div>
-                    <div class="col">Número da Guia</div>
+                    <div class="col-8">Nome do Responsável da Família</div>
+                    <div class="col-2">Telefone</div>
+                    <div class="col-2">CEP</div>
                 </div>
                 <div class="row form-group">    
                     <div class="col-8">
-                        <form:input type="text" path="nome" id="nome" class="form-control"  readonly="true" />
+                        <form:input type="text" path="responsavel_familiar" id="responsavel_familiar" class="form-control"  readonly="true" />
                     </div>
-                    <div class="col">
-                        <form:input type="number" path="numero_guia" id="numero_guia" class="form-control"  readonly="true"/>
+                    <div class="col-2">
+                        <form:input type="text" path="telefone_fixo" id="telefone_fixo" class="form-control phone"  readonly="true"/>
+                    </div>
+                    <div class="col-2">
+                        <form:input type="text" path="cep" id="cep" class="form-control cep"  readonly="true"/>
                     </div>
                 </div>
                 <div class="row form-group">    
-                    <div class="col">Valor</div>
-                    <div class="col">Data de Início</div>
-                    <div class="col">Data de Renovação</div>
+                    <div class="col">Endereço</div>
+                    <div class="col">Observações</div>
                 </div>
                 <div class="row form-group">    
                     <div class="col">
-                        <form:input type="text" path="valor" id="valor" class="form-control valor"  data-thousands="." data-decimal="," data-prefix="R$ "  readonly="true"/>
+                        <form:textarea rows="1" path="endereco" id="endereco" class="form-control" readonly="true"/>
                     </div>
                     <div class="col">
-                        <form:input type="date" path="data_inicio" id="data_inicio" class="form-control"  readonly="true"/>
-                    </div>
-                    <div class="col">
-                        <form:input type="date" path="data_renovacao" id="data_renovacao" class="form-control"  readonly="true"/>
+                        <form:textarea rows="1" path="observacoes" id="observacoes" class="form-control" readonly="true"/>
                     </div>
                 </div>    
                 <div class="row form-group">    
-                    <div class="col">Justificativa</div>
+                    <div class="col">Tipo de Moradia</div>
+                    <div class="col">Cômodos da Moradia</div>
+                    <div class="col">Condições da Moradia</div>
                 </div>
                 <div class="row form-group">    
                     <div class="col">
-                        <form:input type="text" path="justificativa" id="justificativa" class="form-control"  readonly="true"/>
+                        <form:input type="text" path="tipo_moradia" id="tipo_moradia" name="tipo_moradia" class="form-control" readonly="true"/>
+                    </div>   
+                    <div class="col">
+                        <form:input type="text" path="comodos_moradia" id="comodos_moradia" name="comodos_moradia" class="form-control" readonly="true"/>
+                    </div>   
+                    <div class="col">
+                        <form:input type="text" path="condicoes_moradia" id="condicoes_moradia" class="form-control" readonly="true"/>
                     </div>
                 </div> 
+                <div class="row form-group">    
+                    <div class="col">Situação Familiar</div>
+                    <div class="col">Renda Familiar</div>
+                    <div class="col">Data de Cadastro</div>
+                </div>
+                <div class="row form-group">    
+                    <div class="col">
+                        <form:input type="text" path="situacao_familiar" id="situacao_familiar" class="form-control" readonly="true" />
+                    </div>
+                    <div class="col">
+                        <form:input type="text" path="renda_familiar" id="renda_familiar" class="form-control renda_familiar" readonly="true"/>
+                    </div>
+                    <div class="col">
+                        <form:input type="date" path="dataCad" id="dataCad" class="form-control" readonly="true"/>
+                    </div>
+                </div>
                 <div class="row form-group">    
                     <div class="col">
                         <div class="form-actions floatRight">
@@ -93,10 +117,10 @@
                 </div>
             </form:form>  
         </div>
-    <script type="text/javascript">
-        $(function(){
-            $("#valor").maskMoney();
-        });
-    </script>
+        <script type="text/javascript">
+            $(function(){
+                $("#valor").maskMoney();
+            });
+        </script>
     </body>
 </html>

@@ -25,86 +25,64 @@
         <title>Busca de Beneficios</title>
     </head>
     <body>        
-        
-            <div class="container">
-                <div class="row">
-                    <div class="col-2">
-                        <button style="font-size:24px" class="btn btn-sm btn-light" onClick="history.go(-1)" title="Voltar a página anterior!">
-                            <i class="material-icons">undo</i>Voltar
-                        </button>
-                    </div>
-                    <div class="col">
-                        <h1 class="black text-center"> Buscar Benefício</h1>
-                    </div>
-                    <div class="col-2">
-                        <h1 class="black">&nbsp;</h1>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <button style="font-size:24px" class="btn btn-sm btn-light" onClick="history.go(-1)" title="Voltar a página anterior!">
+                        <i class="material-icons">undo</i>Voltar
+                    </button>
                 </div>
-                    <form action="buscarBeneficio" method="POST">
-                        <div class="form-group black"> 
-                            Nome do Benefício
-                            </br>
-                            <table width="100%">
-                                <tr> 
-                                            <td colspan="89"><input type="text" name="nome" id="nome" class="form-control" required="true"> </td>
-                                            <td colspan="10"> <input type="submit" id="submit" class="btn btn-primary" value="Buscar"> </td>
-                                            <td colspan="1"><a class="btn btn-success" href="renderizarCadastrarBeneficio">Cadastrar Benefício!</a></td>                       
-                                
-                                </tr>
-                                            
-                                      
-                                    
-                            </table>
-                        </div>
-                        <div class="container form-group">
-                            <table class="table">
-                                <thead>
-                                    <tr>    
-                                        <th>Nome</th>
-                                        <th>Nº Guia</th>
-                                        <th>Valor</th>
-                                        <th>Início</th>
-                                        <th>Renovação</th>
-                                        <th>Justificativa</th>
-                                        <th colspan="2" class="text-center">Opções</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach items= "${buscaBeneficio}" var="atributo">
-                                        <tr>
-                                            <td> ${atributo.nome}</td>
-                                            <td> ${atributo.numero_guia}</td>
-                                            <td> ${atributo.valor}</td>
-                                            <td> ${atributo.data_inicio}</td>
-                                            <td> ${atributo.data_renovacao}</td>
-                                            <td> ${atributo.justificativa}</td>
-                                            <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarEditarBeneficio/${atributo.id}'" >Editar</button></td>  
-                                            <td><button type="button" class="btn btn-danger" onclick="javascript:window.location.href='renderizarRemoverBeneficio/${atributo.id}'" >Remover</button></td> 
-                                        </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
-                    </form>
-                </div>  
-            <div class="modal fade" id="confirm" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">X</span></button>
-                        <!-- <h4 class="modal-title">Titulo Do Modal</h4>-->
-                        </div>
-                        <div class="modal-body">
-                              <h1>Tem certeza que quer <b>REMOVER</b> o Registro?!</h1>
-                        </div>
-                        <div class="modal-footer">${atributo.id}
-                            <a href="removerBeneficio?${atributo.id}" class="btn btn-primary">Excluir</a>
-                            <button type="button" class="btn btn-warning " data-dismiss="modal" onclick="cancelar()" >Cancelar</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"   onclick="window.location.href='removerBeneficio/1' ">Remover</button>
-                        </div>
-                    </div>
+                <div class="col">
+                    <h1 class="black text-center">Buscar Benefício</h1>
+                </div>
+                <div class="col-2">
+                    <h1 class="black">&nbsp;</h1>
                 </div>
             </div>
-        </div>
+            </br>
+            <form action="buscarBeneficio" method="POST">
+                <div class="form-group black"> 
+                    Nome do Benefício
+                    </br>
+                    <table width="100%">
+                        <tr class="row"> 
+                            <td class="col-5"><input type="text" name="nome" id="nome" class="form-control" required="true"> </td>
+                            <td class="col-1"> <input type="submit" id="submit" class="btn btn-primary" value="Buscar"> </td>
+                            <td class="col-4"> &nbsp; </td>
+                            <td class="col-2"><input type="button" class="btn btn-success right" value="Cadastrar Benefício!" onclick="javascript:window.location.href='renderizarCadastrarBeneficio'"></td>                       
+                        </tr>
+                    </table>
+                </div>
+                <div class="container form-group">
+                    <table class="table">
+                        <thead>
+                            <tr>    
+                                <th>Nome</th>
+                                <th>Nº Guia</th>
+                                <th>Valor</th>
+                                <th>Início</th>
+                                <th>Renovação</th>
+                                <th>Justificativa</th>
+                                <th colspan="2" class="text-center">Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items= "${buscaBeneficio}" var="atributo">
+                                <tr>
+                                    <td> ${atributo.nome}</td>
+                                    <td> ${atributo.numero_guia}</td>
+                                    <td> ${atributo.valor}</td>
+                                    <td> ${atributo.data_inicio}</td>
+                                    <td> ${atributo.data_renovacao}</td>
+                                    <td> ${atributo.justificativa}</td>
+                                    <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarEditarBeneficio/${atributo.id}'" >Editar</button></td>  
+                                    <td><button type="button" class="btn btn-danger" onclick="javascript:window.location.href='renderizarRemoverBeneficio/${atributo.id}'" >Remover</button></td> 
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>  
     </body>
 </html>

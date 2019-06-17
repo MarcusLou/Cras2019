@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="resources/css/bootstrap.css"/>
         <link rel="stylesheet" href="resources/css/principal.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
         <script src="resources/js/jQuery.js"></script>
         <script src="resources/js/popper.js" ></script>
         <script src="resources/js/bootstrap.js"></script> 
@@ -26,85 +27,59 @@
         <title>Busca de Famílias</title>
     </head>
     <body>
-        <div class="container" > 
-                <div class="col-md-6 cadastro">
-                    <h1 class="black"> Buscar Família</h1>
-                    <form action="buscarFamilia" method="POST">
-                        <div class="form-group black"> 
-                            
-                            Nome do Responsável pela Família
-                            </br>
-                            <table width="700">
-                                <tr> 
-                                    <td colspan="90"><input type="text" name="responsavel_familiar" id="responsavel_familiar" class="form-control" required="true"> </td>
-                                    <td colspan="10"> <input type="submit" id="submit" class="btn btn-primary" value="Buscar"> </td>
-                                </tr>
-                            </table>
-                            
-                           
-                        </div>
-                        
-                        <div class="form-group"> 
-
-                            
-                            <a class="btn btn-success" href="renderizarCadastrarFamilia">Cadastrar Família!</a>
-                        </div>
-                        
-                        <div class="container form-group">
-                            <table class="table">
-                                <thead>
-                                    <tr>    
-                                        <th>Nome Resposável</th>
-                                        <th>Endereço</th>
-                                        <th>Telefone</th>
-                                        <th>Situação Familiar</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach items= "${buscaFamilia}" var="atributo">
-                                        <tr>
-                                            <td> ${atributo.responsavel_familiar}</td>
-                                            <td> ${atributo.endereco}</td>
-                                            <td> ${atributo.telefone_fixo}</td>
-                                            <td> ${atributo.situacao_familiar}</td>
-                                            <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarAcessarFamilia/${atributo.id}'" >Acessar</button></td>  
-                                        </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
-                    </form>
-                </div>  
-            <div class="modal fade" id="confirm" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">X</span></button>
-                        <!-- <h4 class="modal-title">Titulo Do Modal</h4>-->
-                        </div>
-                        <div class="modal-body">
-                              <h1>Tem certeza que quer <b>REMOVER</b> o Registro?!</h1>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-warning " data-dismiss="modal" onclick="cancelar()" >Cancelar</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"   onclick="window.location.href='removerFamilia/1' ">Remover</button>
-                        </div>
-                    </div>
+        <div class="container" >
+            <div class="row">
+                <div class="col-2">
+                    <!--<button style="font-size:24px" class="btn btn-sm btn-light" onClick="history.go(-1)" title="Voltar a página anterior!">
+                        <i class="material-icons">undo</i>Voltar
+                    </button>-->
+                </div>
+                <div class="col">
+                    <h1 class="black text-center">Buscar Família</h1>
+                </div>
+                <div class="col-2">
+                    <h1 class="black">&nbsp;</h1>
                 </div>
             </div>
-       </body>
-       
-    <script type="text/javascript">
-        
-        
-        var id = null;
-        $('button.btn').on('click', function(e){
-          id = $(this).attr('date-id');
-        });
-        // callback modal abre
-        $('#confirm').on('show.bs.modal', function(e){
-            $("#cx").text(id);
-        });
-    </script>
-    
+            </br>
+            <form action="buscarFamilia" method="POST">
+                <div class="form-group black"> 
+                    Nome do Responsável pela Família
+                    </br>
+                    <table width="100%">
+                        <tr class="row"> 
+                            <td class="col-5"><input type="text" name="responsavel_familiar" id="responsavel_familiar" class="form-control" required="true"> </td>
+                            <td class="col-1"><input type="submit" id="submit" class="btn btn-primary" value="Buscar"></td>
+                            <td class="col-4">&nbsp;</td>
+                            <td class="col-2"><input type="button" class="btn btn-success right" value="Cadastrar Família!" onclick="javascript:window.location.href='renderizarCadastrarFamilia'"></td>                       
+                        </tr>
+                    </table>
+                </div>        
+                <div class="container form-group">
+                    <table class="table">
+                        <thead>
+                            <tr>    
+                                <th>Nome Resposável</th>
+                                <th>Endereço</th>
+                                <th>Telefone</th>
+                                <th>Situação Familiar</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items= "${buscaFamilia}" var="atributo">
+                                <tr>
+                                    <td> ${atributo.responsavel_familiar}</td>
+                                    <td> ${atributo.endereco}</td>
+                                    <td> ${atributo.telefone_fixo}</td>
+                                    <td> ${atributo.situacao_familiar}</td>
+                                    <td><button type="button" class="btn btn-warning" onclick="javascript:window.location.href='renderizarAcessarFamilia/${atributo.id}'" >Acessar</button></td>  
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div> 
+    </body>
 </html>
