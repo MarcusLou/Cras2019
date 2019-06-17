@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -46,7 +47,16 @@
                 </div>
                 <div class="row form-group">    
                     <div class="col-8">
-                        <form:input type="text" path="nome" id="nome" class="form-control"  readonly="true" />
+                        <form:select path="nome" name="nome" class="form-control" id="nome" readonly="true" >
+                            <form:option value="null" selected="" label="Escolha uma opção:"/>
+                            <form:option value="Bolsa Família" label="Bolsa Família"/>
+                            <form:option value="Vale Gás" label="Vale Gás"/>
+                            <form:option value="Bolsa Escola" label="Bolsa Escola"/>
+                            <form:option value="Garantia-Safra" label="Garantia-Safra"/>
+                            <form:option value="Seguro Defeso(Pescador Artesanal)" label="Seguro Defeso(Pescador Artesanal)"/>
+                            <form:option value="Programa Erradicação Trabalho Infantil" label="Programa Erradicação Trabalho Infantil"/>
+                            <form:option value="Outros" label="Outros"/>
+                        </form:select>
                     </div>
                     <div class="col">
                         <form:input type="number" path="numero_guia" id="numero_guia" class="form-control"  readonly="true"/>
@@ -78,7 +88,7 @@
                 </div> 
                 <div class="row form-group">    
                     <div class="col">
-                        <div class="form-actions floatRight">
+                        <div class="form-actions text-center">
                             <div  id="colaps" class="collapse"> 
                                 <input type="button" value="Cancelar" class="btn btn-primary" onClick="history.go(-1)"> 
                                 <button type="submit" class="btn btn-danger">Sim, desejo realmente <b>Remover!</b></button>

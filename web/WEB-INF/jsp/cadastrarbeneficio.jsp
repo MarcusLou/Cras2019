@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -54,7 +55,16 @@
                     </div>
                     <div class="row form-group">    
                         <div class="col-8">
-                            <input type="text" name="nome" id="nome" class="form-control" required="true" placeholder="Qual o nome do Benefício?" >
+                            <select name="nome" class="form-control" id="nome" required="true" >
+                                <option value="" selected="">Escolha uma opção:</option>
+                                <option value="Bolsa Família">Bolsa Família</option>
+                                <option value="Vale Gás">Vale Gás</option>
+                                <option value="Bolsa Escola">Bolsa Escola</option>
+                                <option value="Garantia-Safra">Garantia-Safra</option>
+                                <option value="Seguro Defeso(Pescador Artesanal)">Seguro Defeso(Pescador Artesanal)</option>
+                                <option value="Programa Erradicação Trabalho Infantil">Programa Erradicação Trabalho Infantil</option>
+                                <option value="Outros">Outros</option>
+                            </select>
                             <button  style="font-size:14px" type="button" class="btn btn-outline-info float-right buttonFont10 " data-toggle="collapse" data-target="#ajudaNome">?</button>
                             <div id="ajudaNome" class="collapse azulAjuda">
                                 O nome do Benefício é dado pelo Governo Federal, por exemplo: Bolsa-Família, Bolsa-Gás, etc...

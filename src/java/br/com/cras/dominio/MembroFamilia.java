@@ -31,26 +31,35 @@ public class MembroFamilia implements Serializable {
     @Column(name = "nome")
     private String nome;
     
-    @Column(name = "funcao_familiar")
-    private String funcao_familiar;
-    
-    @Column(name = "sexo")
-    private String sexo;
-        
-    @Column(name = "data_nascimento")
-    private String data_nascimento;
-    
     @Column(name = "telefone")
     private String telefone;
     
     @Column(name = "celular")
     private String celular;
-    
-    @Column(name = "relacao_familiar")
-    private String relacao_familiar;
         
-    @Column(name = "naturalidade")
-    private String naturalidade;
+    @Column(name = "data_nascimento")
+    private String data_nascimento;
+    
+    @Column(name = "sexo")
+    private String sexo;
+    
+    @Column(name = "cor_raca")
+    private String cor_raca;
+    
+    @Column(name = "cadastro_unico")
+    private String cadastro_unico;
+    
+    @Column(name = "rg")
+    private String rg;
+    
+    @Column(name = "cpf")
+    private String cpf;
+    
+    @Column(name = "nis")
+    private String nis;
+    
+    @Column(name = "titulo")
+    private String titulo;
     
     @Column(name = "nome_pai")
     private String nome_pai;  
@@ -58,29 +67,20 @@ public class MembroFamilia implements Serializable {
     @Column(name = "nome_mae")
     private String nome_mae;    
     
-    @Column(name = "certidao_nascimento")
-    private String certidao_nascimento;
+    @Column(name = "certidao_nasc_casa")
+    private String certidao_nasc_casa;
     
-    @Column(name = "cpf")
-    private String cpf;
+    @Column(name = "relacao_familiar")
+    private String relacao_familiar;
     
-    @Column(name = "cor_raca")
-    private String cor_raca;
+    @Column(name = "funcao_familiar")
+    private String funcao_familiar;
+        
+    @Column(name = "naturalidade")
+    private String naturalidade;
     
     @Column(name = "idFuncionario")
     private int idFuncionario;
-    
-    @Column(name = "cadastro_unico")
-    private String cadastro_unico;
-    
-    @Column(name = "nis")
-    private String nis;
-    
-    @Column(name = "rg")
-    private String rg;
-    
-    @Column(name = "titulo")
-    private String titulo;
     
     @Column(name = "familiaID")
     private int familiaID;
@@ -179,14 +179,14 @@ public class MembroFamilia implements Serializable {
     public void setNome_pai(String nome_pai) {
         this.nome_pai = nome_pai;
     }
-        
-    public String getCertidao_nascimento() {
-        return certidao_nascimento;
+
+    public String getCertidao_nasc_casa() {
+        return certidao_nasc_casa;
     }
 
-    public void setCertidao_nascimento(String certidao_nascimento) {
-        this.certidao_nascimento = certidao_nascimento;
-    }        
+    public void setCertidao_nasc_casa(String certidao_nasc_casa) {
+        this.certidao_nasc_casa = certidao_nasc_casa;
+    }
         
     public String getCPF() {
         return cpf;

@@ -102,7 +102,7 @@ public class FamiliaController {
         try {
 
             dao.adicionar(familia);
-            String retorno = "Benefício cadastrado";
+            String retorno = "Família cadastrada";
             model.addAttribute("retorno", retorno);
             String retorno2 = "renderizarBuscarFamilia";
             model.addAttribute("retorno2", retorno2);
@@ -142,7 +142,7 @@ public class FamiliaController {
         
             System.out.println("id is"+emp.getId());
             dao.update(emp); 
-            String retorno = "Benefício atualizado";
+            String retorno = "Família atualizada";
             model.addAttribute("retorno", retorno);
             String retorno2 = "renderizarBuscarFamilia";
             model.addAttribute("retorno2", retorno2);
@@ -155,14 +155,14 @@ public class FamiliaController {
     //-------------------------------------Remover Familia---------------------------------------------------------------------
         
     @RequestMapping(value="/removerFamilia",method = RequestMethod.POST)  
-    public String removerFamilia(@ModelAttribute("beneficio") Familia emp, ModelMap model) throws Exception{  
+    public String removerFamilia(@ModelAttribute("familia") Familia emp, ModelMap model) throws Exception{  
         FamiliaDAO dao = new FamiliaDAO();
         try {
         
             System.out.println("id is"+emp.getId());
             emp.setStatus(false);
             dao.update(emp);
-            String retorno ="Familia removida";
+            String retorno ="Família removida";
             model.addAttribute("retorno", retorno); 
             String retorno2 = "renderizarBuscarFamilia";
             model.addAttribute("retorno2", retorno2);

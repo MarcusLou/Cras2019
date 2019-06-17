@@ -20,7 +20,7 @@
   <title>Boas Vindas</title>
     </head>
     <body>
-        
+        <H1 class="text-center">SAS</h1>
     <div class="modal fade" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -29,7 +29,7 @@
                 <!-- <h4 class="modal-title">Titulo Do Modal</h4>-->
                 </div>
                 <div class="modal-body">
-                    <h1 >Bom dia!!!</h1>
+                    <h1 >Olá!!!</h1>
                     <p>Seja Bem Vindo ao nosso Sistema!</p>
                 </div>
                 <div class="modal-footer">

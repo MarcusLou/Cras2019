@@ -6,6 +6,7 @@
 
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page isELIgnored="false" %>
 
 <!DOCTYPE html>
@@ -30,9 +31,9 @@
         <div class="container" >
             <div class="row">
                 <div class="col-2">
-                    <!--<button style="font-size:24px" class="btn btn-sm btn-light" onClick="history.go(-1)" title="Voltar a página anterior!">
+                    <button style="font-size:24px" class="btn btn-sm btn-light" onClick="javascript:window.location.href='boasvindas'" title="Voltar a página inicial!">
                         <i class="material-icons">undo</i>Voltar
-                    </button>-->
+                    </button>
                 </div>
                 <div class="col">
                     <h1 class="black text-center">Buscar Família</h1>

@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -102,7 +103,7 @@
                 </div>
                 <div class="row form-group">    
                     <div class="col">
-                        <div class="form-actions floatRight">
+                        <div class="form-actions text-center">
                             <div  id="colaps" class="collapse"> 
                                 <input type="button" value="Cancelar" class="btn btn-primary" onClick="history.go(-1)"> 
                                 <button type="submit" class="btn btn-danger">Sim, desejo realmente <b>Remover!</b></button>

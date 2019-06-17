@@ -142,7 +142,7 @@ input[type=number]::-webkit-outer-spin-button,
     position: relative; /* criamos um contexto para posicionamento */
 }
 .alinhamentoLogin{
-  margin-top:20%;
+  margin-top:22%;
     border:1px solid #dedede7d;
     background-color:  #dedede7d;
     opacity: 1;

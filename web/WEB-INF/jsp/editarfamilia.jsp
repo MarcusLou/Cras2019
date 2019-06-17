@@ -4,7 +4,8 @@
     Author     : Marcus
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -17,6 +18,7 @@
         <script src="<c:url value='../resources/js/popper.js' />" ></script>
         <script src="<c:url value='../resources/js/bootstrap.js' />"></script>
         <script src="<c:url value='../resources/js/maskMoney.js' />"></script>
+        <script src="<c:url value='../resources/js/jquery.mask.js' />"></script>
         <title>Edição da Família</title>
     </head>
     <body>
@@ -198,7 +200,7 @@
                     </div>    
                     <div class="row form-group">    
                         <div class="col">
-                            <div class="form-actions floatRight">
+                            <div class="form-actions text-center">
                                 <div  id="colaps" class="collapse"> 
                                     <input type="button" value="Cancelar" class="btn btn-primary" onClick="history.go(-1)"> 
                                     <button type="submit" class="btn btn-danger">Click aqui para confirmar a Edição!</button>

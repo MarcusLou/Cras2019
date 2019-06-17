@@ -23,10 +23,10 @@
                 color:  #005cbf;
             }
         </style>
-        <title>Edição da Família</title>
+        <title>Acesso ao Membro da Família</title>
     </head>
     <body>   
-        <c:forEach items= "${familiaSelecionada}" var="atributo">
+        <c:forEach items= "${membroFamiliaSelecionada}" var="atributo">
             <div class="container">        
                 <div class="row">
                     <div class="col-2">
@@ -35,7 +35,7 @@
                         </button>
                     </div>
                     <div class="col">
-                        <h1 class="black text-center">Dados da Família</h1>
+                        <h1 class="black text-center">Dados do Membro da Família</h1>
                     </div>
                     <div class="col-2">
                         <h1 class="black">&nbsp;</h1>
@@ -43,9 +43,7 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='/Cras/renderizarBuscarMembroFamilia'">Membros</button>  
-                        <button type="button" class="btn btn-primary" >Despesas</button>  
-                        <button type="button" class="btn btn-primary"  onclick="javascript:window.location.href='/Cras/renderizarBuscarBeneficio'" >Benefícios</button>  
+                        <button type="button" class="btn btn-primary" >Acompanhamento</button>  
                     </div>
                     <div class="col">
                         <h1 class="black">&nbsp;</h1>
@@ -58,77 +56,105 @@
             <div class="container texto-b table table-bordered ">    
                 <div class="container"> 
                     <div class="row textoAzul">    
-                        <div class="col-8">Nome Resposável</div>
+                        <div class="col-8">Nome Completo</div>
                         &nbsp;
                         <div class="col">Telefone</div>
                         &nbsp;
-                        <div class="col">CEP</div>
+                        <div class="col">Celular</div>
                     </div>
                     <div class="row ">    
-                        <div class="col-8 table-bordered rounded ">${atributo.responsavel_familiar}</div>
+                        <div class="col-8 table-bordered rounded ">${atributo.nome}</div>
                         &nbsp;
-                        <div class="col table-bordered rounded">${atributo.telefone_fixo}</div>
+                        <div class="col table-bordered rounded">${atributo.telefone}</div>
                         &nbsp;
-                        <div class="col table-bordered rounded"> ${atributo.cep}</div>
+                        <div class="col table-bordered rounded"> ${atributo.celular}</div>
                     </div>
                 </div>
                 <div class="container"> 
                     <div class="row textoAzul">    
-                        <div class="col">Endereço</div>
+                        <div class="col">Data de Nascimento</div>
                         &nbsp;
-                        <div class="col">Observações</div>
+                        <div class="col">Sexo</div>
+                        &nbsp;
+                        <div class="col">Etnia</div>
+                        &nbsp;
+                        <div class="col">Cadastro Único</div>
                     </div>
                     <div class="row">    
-                        <div class="col table-bordered rounded"> ${atributo.endereco}</div>
+                        <div class="col  table-bordered rounded"> ${atributo.data_nascimento}</div>
                         &nbsp;
-                        <div class="col  table-bordered rounded"> ${atributo.observacoes}</div>
+                        <div class="col  table-bordered rounded"> ${atributo.sexo}</div>
+                        &nbsp;
+                        <div class="col  table-bordered rounded"> ${atributo.cor_raca}</div>
+                        &nbsp;
+                        <div class="col table-bordered rounded"> ${atributo.cadastro_unico}</div>
                     </div>
                 </div>
                 <div class="container"> 
                     <div class="row textoAzul">    
-                        <div class="col">Tipo de Moradia</div>
+                        <div class="col">RG</div>
                         &nbsp;
-                        <div class="col">Cômodos na Moradia</div>
+                        <div class="col">CPF</div>
                         &nbsp;
-                        <div class="col">Condições da Moradia</div>
+                        <div class="col">NIS</div>
+                        &nbsp;
+                        <div class="col">Título</div>
                     </div>
                     <div class="row">    
-                        <div class="col table-bordered rounded"> ${atributo.tipo_moradia}</div>
+                        <div class="col table-bordered rounded"> ${atributo.rg}</div>
                         &nbsp;
-                        <div class="col table-bordered rounded"> ${atributo.comodos_moradia}</div>
+                        <div class="col table-bordered rounded"> ${atributo.cpf}</div>
                         &nbsp;
-                        <div class="col table-bordered rounded"> ${atributo.condicoes_moradia}</div>
+                        <div class="col table-bordered rounded"> ${atributo.nis}</div>
+                        &nbsp;
+                        <div class="col table-bordered rounded"> ${atributo.titulo}</div>
+                        &nbsp;
                     </div>
                 </div>
                 <div class="container"> 
                     <div class="row textoAzul">   
-                        <div class="col">Situação Familiar</div> 
+                        <div class="col">Nome do Pai</div> 
                         &nbsp;
-                        <div class="col">Renda Familiar</div>
+                        <div class="col">Nome da Mãe</div>
                         &nbsp;
-                        <div class="col">Data de Cadastro</div>
+                        <div class="col">Naturalidade</div>
                     </div>
                     <div class="row">    
-                        <div class="col  table-bordered rounded"> ${atributo.situacao_familiar}</div>
+                        <div class="col  table-bordered rounded"> ${atributo.nome_pai}</div>
                         &nbsp;
-                        <div class="col  table-bordered rounded"> ${atributo.renda_familiar}</div>
+                        <div class="col  table-bordered rounded"> ${atributo.nome_mae}</div>
                         &nbsp;
-                        <div class="col  table-bordered rounded"> ${atributo.dataCad}</div>
+                        <div class="col table-bordered rounded"> ${atributo.naturalidade}</div>
+                    </div>
+                </div>
+                <div class="container"> 
+                    <div class="row textoAzul">    
+                        <div class="col">Certidão de Nascimento/Casamento</div>
+                        &nbsp;
+                        <div class="col">Relação Familiar</div>
+                        &nbsp;
+                        <div class="col">Função Familiar</div>
+                    </div>
+                    <div class="row">    
+                        <div class="col  table-bordered rounded"> ${atributo.certidao_nasc_casa}</div>
+                        &nbsp;
+                        <div class="col table-bordered rounded"> ${atributo.relacao_familiar}</div>
+                        &nbsp;
+                        <div class="col table-bordered rounded"> ${atributo.funcao_familiar}</div>
                     </div>
                 </div>
                 </br>
                 <div class="container"> 
                     <div class="row"> 
-                        <div class="col">&nbsp;</div>
-                        <div class="col align-content-center">
-                            <button type="button" class="btn btn-warning" onclick="javascript:window.location.href='/Cras/renderizarEditarFamilia/${atributo.id}'" >Editar Família</button>  
-                            <button type="button" class="btn btn-danger"  onclick="javascript:window.location.href='/Cras/renderizarRemoverFamilia/${atributo.id}'" >Remover Família</button>
+                        <div class="col-1">&nbsp;</div>
+                        <div class="col text-center">
+                            <button type="button" class="btn btn-warning" onclick="javascript:window.location.href='/Cras/renderizarEditarMembroFamilia/${atributo.id}'" >Editar Membro da Família</button>  
+                            <button type="button" class="btn btn-danger"  onclick="javascript:window.location.href='/Cras/renderizarRemoverMembroFamilia/${atributo.id}'" >Remover Membro da Família</button>
                         </div>  
-                        <div class="col">&nbsp;</div>
+                        <div class="col-1">&nbsp;</div>
                     </div>
                     </br>
                 </div>
-            </div>
             </div>
         </c:forEach>
     </body>

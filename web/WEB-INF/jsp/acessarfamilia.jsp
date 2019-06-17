@@ -23,7 +23,7 @@
                 color:  #005cbf;
             }
         </style>
-        <title>Edição da Família</title>
+        <title>Acesso a Família</title>
     </head>
     <body>   
         <c:forEach items= "${familiaSelecionada}" var="atributo">
@@ -119,16 +119,15 @@
                 </br>
                 <div class="container"> 
                     <div class="row"> 
-                        <div class="col">&nbsp;</div>
-                        <div class="col align-content-center">
+                        <div class="col-1">&nbsp;</div>
+                        <div class="col text-center">
                             <button type="button" class="btn btn-warning" onclick="javascript:window.location.href='/Cras/renderizarEditarFamilia/${atributo.id}'" >Editar Família</button>  
                             <button type="button" class="btn btn-danger"  onclick="javascript:window.location.href='/Cras/renderizarRemoverFamilia/${atributo.id}'" >Remover Família</button>
                         </div>  
-                        <div class="col">&nbsp;</div>
+                        <div class="col-1">&nbsp;</div>
                     </div>
                     </br>
                 </div>
-            </div>
             </div>
         </c:forEach>
     </body>

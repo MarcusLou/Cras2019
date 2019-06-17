@@ -5,7 +5,8 @@
 --%>
 
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -41,7 +42,7 @@
                 <input type="hidden" name="cod_cras" id="cod_cras" class="form-control" value="1">
                 <input type="hidden" name="idFuncionario" id="idFuncionario" class="form-control" value="1">
                 <div class="form-group"> 
-                    <div class="row form-group">    
+                    <div class="row form-group textoAzul">    
                         <div class="col-8">
                             <label for="responsavel_familiar">
                                 Nome do Responsável da Família

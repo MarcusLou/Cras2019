@@ -1,9 +1,10 @@
 <%-- 
     Document   : index
-    Created on : 03/04/2019, 02:20:37
+    Created on : 03/04/2019, 02:20:373
     Author     : Ronnie
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!-- mapear boot por tags -->
+<%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
@@ -42,16 +43,6 @@
                                 Família
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Agenda
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="renderizarBuscarEvento" target="principal">Eventos</a>
-                                <a class="dropdown-item" href="renderizarExibirEvento" target="principal">Exibir</a>
-                                
-                            </div>
-                        </li>   
                     </ul>
                     <ul class="navbar-nav navbar-right">
                         <li class="nav-item"><a class="nav-link" href="renderizarLogin"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -62,7 +53,7 @@
             </div>
 
         </nav>
-       <iframe name="principal"  class="embed-responsive mr-auto embed-responsive-item"  src=" "></iframe>
+       <iframe name="principal"  class="embed-responsive mr-auto embed-responsive-item"  src="boasvindas"></iframe>
        
         
  

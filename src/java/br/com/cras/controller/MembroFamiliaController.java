@@ -33,16 +33,6 @@ public class MembroFamiliaController {
         return "cadastrarmembrofamilia";
     }
     
-    @RequestMapping(value="/renderizarAcessarMembroFamilia/{id}")  
-    public String renderizarAcessarFamilia(@PathVariable int id, Model model) throws SQLException  {  
-        MembroFamiliaDAO dao = new MembroFamiliaDAO();
-        try {
-             model.addAttribute("membroFamiliaSelecionada", dao.getMembroFamiliaById2(id));
-        } catch (Error e) {
-            System.out.println(e);
-        }     
-	return "acessarmembrofamilia";
-    }
     
     @RequestMapping("/renderizarBuscarMembroFamilia")
     public String renderizarBuscaMembroFamilia(Model model) throws SQLException {
@@ -58,15 +48,14 @@ public class MembroFamiliaController {
     @RequestMapping(value="/renderizarAcessarMembroFamilia/{id}")  
     public String renderizarAcessarMembroFamilia(@PathVariable int id, Model model) throws SQLException  {  
         MembroFamiliaDAO dao = new MembroFamiliaDAO();
-        //MembroMembroFamiliaDAO dao = new MembroFamiliaDAO();
-        //
         try {
-             model.addAttribute("buscaMembroFamilia", dao.getMembroFamiliaById(id));
+             model.addAttribute("membroFamiliaSelecionada", dao.getMembroFamiliaById2(id));
         } catch (Error e) {
             System.out.println(e);
         }     
 	return "acessarmembrofamilia";
     }
+    
            
     @RequestMapping(value="/renderizarEditarMembroFamilia/{id}")  
     public String renderizarEdicaoMembroFamilia(@PathVariable int id, ModelMap model) throws SQLException  {  
