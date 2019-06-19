@@ -29,8 +29,8 @@
                 <!-- <h4 class="modal-title">Titulo Do Modal</h4>-->
                 </div>
                 <div class="modal-body">
-                    <h1 >Olá!!!</h1>
-                    <p>Seja Bem Vindo ao nosso Sistema!</p>
+                    <h1 >Olá!!!</h1></br></br>
+                    <p>Seja Bem Vindo ao Sistema de Atendimento Social!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Fechar!</button>

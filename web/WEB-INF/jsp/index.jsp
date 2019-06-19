@@ -43,6 +43,16 @@
                                 Família
                             </a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Agenda
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="renderizarBuscarEvento" target="principal">Evento</a>
+                                <a class="dropdown-item" href="#" target="principal">Agenda Administrativa</a>
+                                
+                            </div>
+                        </li>
                     </ul>
                     <ul class="navbar-nav navbar-right">
                         <li class="nav-item"><a class="nav-link" href="renderizarLogin"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

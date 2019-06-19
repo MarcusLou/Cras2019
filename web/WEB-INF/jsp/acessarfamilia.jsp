@@ -42,17 +42,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='/Cras/renderizarBuscarMembroFamilia'">Membros</button>  
-                        <button type="button" class="btn btn-primary" >Despesas</button>  
-                        <button type="button" class="btn btn-primary"  onclick="javascript:window.location.href='/Cras/renderizarBuscarBeneficio'" >Benefícios</button>  
-                    </div>
                     <div class="col">
-                        <h1 class="black">&nbsp;</h1>
+                        <button type="button" class="btn btn-primary" >Atendimento</button> 
+                        <button type="button" class="btn btn-primary"  onclick="javascript:window.location.href='/Cras/renderizarBuscarBeneficio'" >Benefícios</button>  
+                        <button type="button" class="btn btn-primary" >Despesas</button>  
+                        <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='/Cras/renderizarBuscarMembroFamilia'">Membros</button>  
                     </div>
-                    <div class="col-4">
-                        <h1 class="black">&nbsp;</h1>
-                    </div>
+                </div>      
+                <div class="row">
+                    &nbsp;
                 </div>
             </div>
             <div class="container texto-b table table-bordered ">    

@@ -79,6 +79,21 @@ public class BeneficioDAO {
         return retorno;
     }
 
+    public List<Beneficio> getBeneficioById2(int id) throws SQLException {
+        EntityManager em = getEM();
+        
+        List<Beneficio> lista = new ArrayList<>();
+        try {
+            //Consulta uma pessoa pelo seu ID.
+            Beneficio beneficio = em.find(Beneficio.class, id);
+            lista.add(beneficio);
+        } finally {
+            em.close();
+        }
+        return lista;
+               
+    }
+    
     public Beneficio getBeneficioById(int id) {
         EntityManager em = getEM();
         Beneficio beneficio = null;
